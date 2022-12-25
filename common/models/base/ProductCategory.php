@@ -7,16 +7,15 @@ namespace common\models\base;
 use Yii;
 
 /**
- * This is the base-model class for table "product_category".
+ * This is the base-model class for table "product_categories".
  *
  * @property integer $id
- * @property integer $product_id
- * @property integer $category_id
- * @property integer $priority
+ * @property integer $user_id
+ * @property string $category_slug
+ * @property integer $status
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
- * @property integer $status
  * @property string $aliasModel
  */
 abstract class ProductCategory extends \common\models\base\ActiveRecord
@@ -29,7 +28,7 @@ abstract class ProductCategory extends \common\models\base\ActiveRecord
      */
     public static function tableName()
     {
-        return 'product_category';
+        return 'product_categories';
     }
 
     /**
@@ -38,8 +37,9 @@ abstract class ProductCategory extends \common\models\base\ActiveRecord
     public function rules()
     {
         return [
-            [['product_id', 'category_id', 'priority', 'status'], 'integer'],
-            [['created_at', 'updated_at', 'deleted_at'], 'safe']
+            [['user_id', 'status'], 'integer'],
+            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['category_slug'], 'string', 'max' => 500]
         ];
     }
 
@@ -50,13 +50,12 @@ abstract class ProductCategory extends \common\models\base\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'product_id' => 'Product ID',
-            'category_id' => 'Category ID',
-            'priority' => 'Priority',
+            'user_id' => 'User ID',
+            'category_slug' => 'Category Slug',
+            'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
-            'status' => 'Status',
         ];
     }
 

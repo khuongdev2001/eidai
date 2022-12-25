@@ -7,19 +7,20 @@ namespace common\models\base;
 use Yii;
 
 /**
- * This is the base-model class for table "pages".
+ * This is the base-model class for table "sliders".
  *
  * @property integer $id
  * @property integer $user_id
+ * @property string $image
+ * @property string $link_to
  * @property integer $status
- * @property string $page_title
- * @property string $page_content
+ * @property integer $priority
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
  * @property string $aliasModel
  */
-abstract class Page extends \common\models\base\ActiveRecord
+abstract class Slider extends \common\models\base\ActiveRecord
 {
 
 
@@ -29,7 +30,7 @@ abstract class Page extends \common\models\base\ActiveRecord
      */
     public static function tableName()
     {
-        return 'pages';
+        return 'sliders';
     }
 
     /**
@@ -38,10 +39,9 @@ abstract class Page extends \common\models\base\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'status'], 'integer'],
-            [['page_content'], 'string'],
+            [['user_id', 'status', 'priority'], 'integer'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['page_title'], 'string', 'max' => 500]
+            [['image', 'link_to'], 'string', 'max' => 500]
         ];
     }
 
@@ -53,9 +53,10 @@ abstract class Page extends \common\models\base\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
+            'image' => 'Image',
+            'link_to' => 'Link To',
             'status' => 'Status',
-            'page_title' => 'Page Title',
-            'page_content' => 'Page Content',
+            'priority' => 'Priority',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
@@ -66,11 +67,11 @@ abstract class Page extends \common\models\base\ActiveRecord
     
     /**
      * @inheritdoc
-     * @return \common\models\PageQuery the active query used by this AR class.
+     * @return \common\models\SliderQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \common\models\PageQuery(get_called_class());
+        return new \common\models\SliderQuery(get_called_class());
     }
 
 

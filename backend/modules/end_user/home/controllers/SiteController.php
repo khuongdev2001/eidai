@@ -2,6 +2,8 @@
 
 namespace backend\modules\end_user\home\controllers;
 
+use backend\modules\end_user\home\models\Slider;
+use yii\db\Query;
 use yii\web\Controller;
 
 class SiteController extends Controller
@@ -13,6 +15,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render("index");
+        $sliders = Slider::find()->limit(10)->active()->all();
+        return $this->render("index", compact("sliders"));
     }
 }

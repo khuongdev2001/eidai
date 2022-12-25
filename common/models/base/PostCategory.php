@@ -7,19 +7,19 @@ namespace common\models\base;
 use Yii;
 
 /**
- * This is the base-model class for table "pages".
+ * This is the base-model class for table "post_categories".
  *
  * @property integer $id
  * @property integer $user_id
+ * @property string $category_title
+ * @property string $category_slug
  * @property integer $status
- * @property string $page_title
- * @property string $page_content
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
  * @property string $aliasModel
  */
-abstract class Page extends \common\models\base\ActiveRecord
+abstract class PostCategory extends \common\models\base\ActiveRecord
 {
 
 
@@ -29,7 +29,7 @@ abstract class Page extends \common\models\base\ActiveRecord
      */
     public static function tableName()
     {
-        return 'pages';
+        return 'post_categories';
     }
 
     /**
@@ -39,9 +39,8 @@ abstract class Page extends \common\models\base\ActiveRecord
     {
         return [
             [['user_id', 'status'], 'integer'],
-            [['page_content'], 'string'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['page_title'], 'string', 'max' => 500]
+            [['category_title', 'category_slug'], 'string', 'max' => 500]
         ];
     }
 
@@ -53,9 +52,9 @@ abstract class Page extends \common\models\base\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
+            'category_title' => 'Category Title',
+            'category_slug' => 'Category Slug',
             'status' => 'Status',
-            'page_title' => 'Page Title',
-            'page_content' => 'Page Content',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
@@ -66,11 +65,11 @@ abstract class Page extends \common\models\base\ActiveRecord
     
     /**
      * @inheritdoc
-     * @return \common\models\PageQuery the active query used by this AR class.
+     * @return \common\models\PostCategoryQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \common\models\PageQuery(get_called_class());
+        return new \common\models\PostCategoryQuery(get_called_class());
     }
 
 
