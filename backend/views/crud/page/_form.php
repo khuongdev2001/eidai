@@ -60,6 +60,9 @@ use yii\helpers\StringHelper;
 
 <!-- attribute page_title -->
 			<?= $form->field($model, 'page_title')->textInput(['maxlength' => true]) ?>
+
+<!-- attribute page_slug -->
+			<?= $form->field($model, 'page_slug')->textInput(['maxlength' => true]) ?>
         </p>
         <?php $this->endBlock(); ?>
         

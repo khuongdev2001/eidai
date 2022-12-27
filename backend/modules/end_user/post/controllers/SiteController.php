@@ -6,6 +6,7 @@ use common\models\PostCategory;
 use Yii;
 use backend\modules\end_user\post\models\Post;
 use backend\modules\end_user\post\models\search\PostSearch;
+use yii\db\Query;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

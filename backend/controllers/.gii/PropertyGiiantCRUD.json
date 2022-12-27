@@ -1,0 +1,66 @@
+{
+    "modelclass": {
+        "value": "common\\models\\Property",
+        "name": "modelClass"
+    },
+    "searchmodelclass": {
+        "value": "backend\\models\\search\\Property",
+        "name": "searchModelClass"
+    },
+    "controllerclass": {
+        "value": "backend\\controllers\\crud\\PropertyController",
+        "name": "controllerClass"
+    },
+    "basecontrollerclass": {
+        "value": "yii\\web\\Controller",
+        "name": "baseControllerClass"
+    },
+    "viewpath": {
+        "value": "@backend\/views\/crud",
+        "name": "viewPath"
+    },
+    "pathprefix": {
+        "value": "\/crud\/",
+        "name": "pathPrefix"
+    },
+    "enablei18n": {
+        "value": false,
+        "name": "enableI18N"
+    },
+    "singularentities": {
+        "value": true,
+        "name": "singularEntities"
+    },
+    "indexwidgettype": {
+        "value": "grid",
+        "name": "indexWidgetType"
+    },
+    "formlayout": {
+        "value": "horizontal",
+        "name": "formLayout"
+    },
+    "actionbuttonclass": {
+        "value": "yii\\grid\\ActionColumn",
+        "name": "actionButtonClass"
+    },
+    "providerlist": {
+        "value": {
+            "222": "schmunk42\\giiant\\generators\\crud\\providers\\core\\CallbackProvider",
+            "224": "schmunk42\\giiant\\generators\\crud\\providers\\core\\OptsProvider",
+            "225": "schmunk42\\giiant\\generators\\crud\\providers\\core\\RelationProvider"
+        },
+        "name": "providerList"
+    },
+    "template": {
+        "value": "default",
+        "name": "template"
+    },
+    "accessfilter": {
+        "value": null,
+        "name": "accessFilter"
+    },
+    "modelmessagecategory": {
+        "value": "models",
+        "name": "modelMessageCategory"
+    }
+}

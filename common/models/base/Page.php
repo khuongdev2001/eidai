@@ -17,6 +17,7 @@ use Yii;
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
+ * @property string $page_slug
  * @property string $aliasModel
  */
 abstract class Page extends \common\models\base\ActiveRecord
@@ -41,7 +42,7 @@ abstract class Page extends \common\models\base\ActiveRecord
             [['user_id', 'status'], 'integer'],
             [['page_content'], 'string'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['page_title'], 'string', 'max' => 500]
+            [['page_title', 'page_slug'], 'string', 'max' => 500]
         ];
     }
 
@@ -59,6 +60,7 @@ abstract class Page extends \common\models\base\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
+            'page_slug' => 'Page Slug',
         ];
     }
 

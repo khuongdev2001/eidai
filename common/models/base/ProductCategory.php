@@ -16,6 +16,7 @@ use Yii;
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
+ * @property string $category_name
  * @property string $aliasModel
  */
 abstract class ProductCategory extends \common\models\base\ActiveRecord
@@ -39,7 +40,7 @@ abstract class ProductCategory extends \common\models\base\ActiveRecord
         return [
             [['user_id', 'status'], 'integer'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['category_slug'], 'string', 'max' => 500]
+            [['category_slug', 'category_name'], 'string', 'max' => 500]
         ];
     }
 
@@ -56,6 +57,7 @@ abstract class ProductCategory extends \common\models\base\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
+            'category_name' => 'Category Name',
         ];
     }
 

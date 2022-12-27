@@ -15,7 +15,6 @@ return array(
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'yii2tech\\ar\\softdelete\\' => array($vendorDir . '/yii2tech/ar-softdelete/src'),
     'trntv\\filekit\\' => array($vendorDir . '/yii2-starter-kit/yii2-file-kit/src'),
-    'tests\\' => array($baseDir . '/tests'),
     'schmunk42\\giiant\\' => array($vendorDir . '/schmunk42/yii2-giiant/src'),
     'rmrevin\\yii\\fontawesome\\' => array($vendorDir . '/rmrevin/yii2-fontawesome'),
     'pheme\\settings\\' => array($vendorDir . '/pheme/yii2-settings'),

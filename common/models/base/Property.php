@@ -7,12 +7,16 @@ namespace common\models\base;
 use Yii;
 
 /**
- * This is the base-model class for table "property".
+ * This is the base-model class for table "properties".
  *
  * @property integer $id
- * @property string $property_title
+ * @property integer $user_id
+ * @property string $property_name
+ * @property string $property_slug
+ * @property integer $status
  * @property string $created_at
  * @property string $updated_at
+ * @property string $deleted_at
  * @property string $aliasModel
  */
 abstract class Property extends \common\models\base\ActiveRecord
@@ -25,7 +29,7 @@ abstract class Property extends \common\models\base\ActiveRecord
      */
     public static function tableName()
     {
-        return 'property';
+        return 'properties';
     }
 
     /**
@@ -34,8 +38,9 @@ abstract class Property extends \common\models\base\ActiveRecord
     public function rules()
     {
         return [
-            [['property_title'], 'string'],
-            [['created_at', 'updated_at'], 'safe']
+            [['user_id', 'status'], 'integer'],
+            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['property_name', 'property_slug'], 'string', 'max' => 500]
         ];
     }
 
@@ -46,9 +51,13 @@ abstract class Property extends \common\models\base\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'property_title' => 'Property Title',
+            'user_id' => 'User ID',
+            'property_name' => 'Property Name',
+            'property_slug' => 'Property Slug',
+            'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At',
         ];
     }
 

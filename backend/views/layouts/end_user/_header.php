@@ -1,3 +1,7 @@
+<?php
+
+use yii\helpers\Url;
+?>
 <header id="masthead" class="site-header" role="banner" style="">
     <div class="header-social"
          style="max-width: 1080px; margin-left: auto; margin-right: auto; margin-bottom: 0px; margin-top:15px;">
@@ -19,7 +23,7 @@
                         <ul id="menu-menu-chinh" class="menu">
                             <li id="menu-item-204"
                                 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-204">
-                                <a href="http://eidai.com.vn" aria-current="page"
+                                <a href="<?= Yii::$app->urlManagerBackend->hostInfo ?>" aria-current="page"
                                    class="menu-image-title-after menu-image-not-hovered">
                                     <img width="200" height="54"
                                          src="https://eidai.com.vn/wp-content/uploads/2020/06/Untitled-1-1.png"
@@ -61,20 +65,20 @@
                             </li>
                             <li id="menu-item-423"
                                 class="menu-item menu-item-type-post_type menu-item-object-post menu-item-423">
-                                <a href="https://eidai.com.vn/danh-sach-showroom-dai-ly/">DANH SÁCH SHOWROOM/ĐẠI LÝ</a>
+                                <a href="/end-user/page/site/view?page_slug=danh-sach-showroom-dai-ly">DANH SÁCH SHOWROOM/ĐẠI LÝ</a>
                             </li>
                             <li id="menu-item-431"
                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-431">
-                                <a href="https://eidai.com.vn/category/tin-tuc-bai-viet/">TIN TỨC &#038; BÀI VIẾT</a>
+                                <a href="/end-user/post/site?category_slug=tin-tuc-and-bai-viet">TIN TỨC &#038; BÀI VIẾT</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-403"
                                         class="menu-item menu-item-type-post_type menu-item-object-post menu-item-403">
-                                        <a href="https://eidai.com.vn/chao-moi-nguoi/">Ký kết hợp tác phân phối sàn gỗ
+                                        <a href="/end-user/post/site/view?post_slug=chao-moi-nguoi">Ký kết hợp tác phân phối sàn gỗ
                                             EIDAI</a>
                                     </li>
                                     <li id="menu-item-428"
                                         class="menu-item menu-item-type-post_type menu-item-object-post menu-item-428">
-                                        <a href="https://eidai.com.vn/tieu-chuan-chat-luong-cua-san-go-cao-cap-eidai/">Tiêu
+                                        <a href="/end-user/post/site/view?post_slug=tieu-chuan-chat-luong-cua-san-go-cao-cap-eidai">Tiêu
                                             chuẩn chất lượng của sàn gỗ cao cấp EIDAI</a>
                                     </li>
                                 </ul>

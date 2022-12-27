@@ -41,4 +41,14 @@ class Post extends BasePost
             ]
         );
     }
+
+    public function getNext() {
+        $next = $this->find()->where(['>', 'id', $this->id])->orderBy('id asc')->one();
+        return $next;
+    }
+    
+    public function getPrev() {
+        $prev = $this->find()->where(['<', 'id', $this->id])->orderBy('id desc')->one();
+        return $prev;
+    }
 }

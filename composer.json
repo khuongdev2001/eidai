@@ -1,5 +1,5 @@
 {
-    "name": "Eidai",
+    "name": "php/eidai",
     "description": "Eidai",
     "keywords": [
         "Eidai"
@@ -30,7 +30,11 @@
         "optimize-autoloader": true,
         "allow-plugins": {
             "yiisoft/yii2-composer": true
-        }
+        },
+        "platform": {
+            "php": "8.2"
+        },
+        "platform-check": false
     },
     "repositories": [{
         "type": "composer",

@@ -57,6 +57,9 @@ use yii\helpers\StringHelper;
 
 <!-- attribute category_slug -->
 			<?= $form->field($model, 'category_slug')->textInput(['maxlength' => true]) ?>
+
+<!-- attribute category_name -->
+			<?= $form->field($model, 'category_name')->textInput(['maxlength' => true]) ?>
         </p>
         <?php $this->endBlock(); ?>
         

@@ -16,7 +16,7 @@ use yii\helpers\StringHelper;
 <div class="post-category-form">
 
     <?php $form = ActiveForm::begin([
-    'id' => 'PostCategory',
+    'id' => '',
     'layout' => 'horizontal',
     'enableClientValidation' => true,
     'errorSummaryCssClass' => 'error-summary alert alert-danger',

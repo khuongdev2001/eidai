@@ -6,5 +6,4 @@ use common\models\Post as BasePost;
 
 class Post extends BasePost
 {
-    
 }

@@ -15,7 +15,14 @@ $config = [
             'tablePrefix' => env('DB_TABLE_PREFIX'),
             'charset' => env('DB_CHARSET', 'utf8'),
             'enableSchemaCache' => YII_ENV_PROD,
-        ]
+        ],
+        'urlManagerBackend' => \yii\helpers\ArrayHelper::merge(
+            [
+                'hostInfo' => env('BACKEND_HOST_INFO'),
+                'baseUrl' => env('BACKEND_BASE_URL'),
+            ],
+            require(Yii::getAlias('@backend/config/_urlManager.php'))
+        ),
     ]
 ];
 

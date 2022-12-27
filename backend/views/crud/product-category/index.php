@@ -110,6 +110,7 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 			'updated_at',
 			'deleted_at',
 			'category_slug',
+			'category_name',
                 ]
         ]); ?>
     </div>

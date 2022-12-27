@@ -40,7 +40,6 @@ class ComposerStaticInitf068032ef495bf0b2b3dbca7295acb88
         't' => 
         array (
             'trntv\\filekit\\' => 14,
-            'tests\\' => 6,
         ),
         's' => 
         array (
@@ -171,10 +170,6 @@ class ComposerStaticInitf068032ef495bf0b2b3dbca7295acb88
         'trntv\\filekit\\' => 
         array (
             0 => __DIR__ . '/..' . '/yii2-starter-kit/yii2-file-kit/src',
-        ),
-        'tests\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/tests',
         ),
         'schmunk42\\giiant\\' => 
         array (
@@ -2214,29 +2209,6 @@ class ComposerStaticInitf068032ef495bf0b2b3dbca7295acb88
         'schmunk42\\giiant\\generators\\test\\Generator' => __DIR__ . '/..' . '/schmunk42/yii2-giiant/src/generators/test/Generator.php',
         'schmunk42\\giiant\\helpers\\GiiantFaker' => __DIR__ . '/..' . '/schmunk42/yii2-giiant/src/helpers/GiiantFaker.php',
         'schmunk42\\giiant\\helpers\\SaveForm' => __DIR__ . '/..' . '/schmunk42/yii2-giiant/src/helpers/SaveForm.php',
-        'tests\\backend\\_pages\\LoginPage' => __DIR__ . '/../..' . '/tests/backend/_pages/LoginPage.php',
-        'tests\\common\\_support\\FixtureHelper' => __DIR__ . '/../..' . '/tests/common/_support/FixtureHelper.php',
-        'tests\\common\\fixtures\\ArticleAttachmentFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/ArticleAttachmentFixture.php',
-        'tests\\common\\fixtures\\ArticleCategoryFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/ArticleCategoryFixture.php',
-        'tests\\common\\fixtures\\ArticleFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/ArticleFixture.php',
-        'tests\\common\\fixtures\\KeyStorageItemFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/KeyStorageItemFixture.php',
-        'tests\\common\\fixtures\\PageFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/PageFixture.php',
-        'tests\\common\\fixtures\\RbacAuthAssignmentFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/RbacAuthAssignmentFixture.php',
-        'tests\\common\\fixtures\\RbacAuthItemChildFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/RbacAuthItemChildFixture.php',
-        'tests\\common\\fixtures\\RbacAuthItemFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/RbacAuthItemFixture.php',
-        'tests\\common\\fixtures\\RbacAuthRuleFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/RbacAuthRuleFixture.php',
-        'tests\\common\\fixtures\\UserFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/UserFixture.php',
-        'tests\\common\\fixtures\\UserProfileFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/UserProfileFixture.php',
-        'tests\\common\\fixtures\\WidgetCarouselFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/WidgetCarouselFixture.php',
-        'tests\\common\\fixtures\\WidgetCarouselItemFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/WidgetCarouselItemFixture.php',
-        'tests\\common\\fixtures\\WidgetMenuFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/WidgetMenuFixture.php',
-        'tests\\common\\fixtures\\WidgetTextFixture' => __DIR__ . '/../..' . '/tests/common/fixtures/WidgetTextFixture.php',
-        'tests\\common\\unit\\KeyStorageTest' => __DIR__ . '/../..' . '/tests/common/unit/KeyStorageTest.php',
-        'tests\\common\\unit\\UserTest' => __DIR__ . '/../..' . '/tests/common/unit/UserTest.php',
-        'tests\\frontend\\_pages\\LoginPage' => __DIR__ . '/../..' . '/tests/frontend/_pages/LoginPage.php',
-        'tests\\frontend\\_pages\\SignupPage' => __DIR__ . '/../..' . '/tests/frontend/_pages/SignupPage.php',
-        'tests\\frontend\\acceptance\\SignupCest' => __DIR__ . '/../..' . '/tests/frontend/acceptance/SignupCest.php',
-        'tests\\frontend\\functional\\SignupCest' => __DIR__ . '/../..' . '/tests/frontend/functional/SignupCest.php',
         'trntv\\filekit\\File' => __DIR__ . '/..' . '/yii2-starter-kit/yii2-file-kit/src/File.php',
         'trntv\\filekit\\Storage' => __DIR__ . '/..' . '/yii2-starter-kit/yii2-file-kit/src/Storage.php',
         'trntv\\filekit\\actions\\BaseAction' => __DIR__ . '/..' . '/yii2-starter-kit/yii2-file-kit/src/actions/BaseAction.php',

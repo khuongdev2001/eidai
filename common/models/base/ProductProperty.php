@@ -7,17 +7,16 @@ namespace common\models\base;
 use Yii;
 
 /**
- * This is the base-model class for table "product_property".
+ * This is the base-model class for table "product_properties".
  *
  * @property integer $id
+ * @property integer $user_id
  * @property integer $product_id
- * @property integer $product_variant_id
- * @property string $property_content
- * @property integer $type
- * @property integer $parent_id
- * @property integer $group_id
+ * @property integer $property_id
+ * @property string $property_value
  * @property string $created_at
  * @property string $updated_at
+ * @property string $deleted_at
  * @property string $aliasModel
  */
 abstract class ProductProperty extends \common\models\base\ActiveRecord
@@ -30,7 +29,7 @@ abstract class ProductProperty extends \common\models\base\ActiveRecord
      */
     public static function tableName()
     {
-        return 'product_property';
+        return 'product_properties';
     }
 
     /**
@@ -39,9 +38,9 @@ abstract class ProductProperty extends \common\models\base\ActiveRecord
     public function rules()
     {
         return [
-            [['product_id', 'product_variant_id', 'type', 'parent_id', 'group_id'], 'integer'],
-            [['property_content'], 'string'],
-            [['created_at', 'updated_at'], 'safe']
+            [['user_id', 'product_id', 'property_id'], 'integer'],
+            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['property_value'], 'string', 'max' => 500]
         ];
     }
 
@@ -52,14 +51,13 @@ abstract class ProductProperty extends \common\models\base\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'user_id' => 'User ID',
             'product_id' => 'Product ID',
-            'product_variant_id' => 'Product Variant ID',
-            'property_content' => 'Property Content',
-            'type' => 'Type',
-            'parent_id' => 'Parent ID',
-            'group_id' => 'Group ID',
+            'property_id' => 'Property ID',
+            'property_value' => 'Property Value',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At',
         ];
     }
 
