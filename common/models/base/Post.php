@@ -19,6 +19,7 @@ use Yii;
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
+ * @property string $post_content
  * @property string $aliasModel
  */
 abstract class Post extends \common\models\base\ActiveRecord
@@ -42,6 +43,7 @@ abstract class Post extends \common\models\base\ActiveRecord
         return [
             [['user_id', 'category_id', 'status'], 'integer'],
             [['publish_at', 'created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['post_content'], 'string'],
             [['post_title', 'post_slug'], 'string', 'max' => 500]
         ];
     }
@@ -62,6 +64,7 @@ abstract class Post extends \common\models\base\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
+            'post_content' => 'Post Content',
         ];
     }
 

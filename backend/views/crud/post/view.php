@@ -86,6 +86,7 @@ $this->params['breadcrumbs'][] = 'View';
         'created_at',
         'updated_at',
         'deleted_at',
+        'post_content:ntext',
         'post_title',
         'post_slug',
     ],

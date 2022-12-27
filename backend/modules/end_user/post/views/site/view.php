@@ -1,3 +1,11 @@
+<?php
+/**
+ * @var Post $post
+ */
+
+use common\models\Post;
+
+?>
 <div id="content" class="site-content" tabindex="-1">
     <div class="col-full">
         <div class="woocommerce"></div>
@@ -16,44 +24,11 @@
                         <span class="post-comments">&mdash; <a
                                     href="https://eidai.com.vn/san-go-eidai-khang-khuan-khang-virus/#respond">Để lại phản hồi</a>
             </span>
-                        <h1 class="entry-title">SÀN GỖ EIDAI KHÁNG KHUẨN, KHÁNG VIRUS</h1>
+                        <h1 class="entry-title"><?= $post->post_title ?></h1>
                     </header>
                     <!-- .entry-header -->
                     <div class="entry-content">
-                        <p>
-                            <span class="fontstyle0">Ngày nay khi nhu cầu về sức khỏe, sạch sẽ về nơi ở ngày càng tăng và để hiện thực hóa một môi trường sống an toàn, đảm bảo hơn thì Công ty TNHH Eidai Việt Nam đã phát triển và cho ra mắt một số sản phẩm sàn gỗ có chức năng kháng khuẩn, kháng virus. Với chức năng này sẽ làm giảm số lượng vi khuẩn, virus bám trên bề mặt sản phẩm đến 99% trong 24 giờ. Chính vì thế khách hàng hoàn toàn yên tâm khi sử dụng sản phẩm sàn gỗ Eidai của chúng tôi.</span>
-                        </p>
-                        <p>Sàn gỗ cao cấp EIDAI Nhật Bản là sàn gỗ duy nhất tại Việt Nam đạt tiêu chuẩn kháng khuẩn,
-                            kháng virus SIAA</p>
-                        <p>
-                            <img class=" wp-image-768 aligncenter"
-                                 src="http://eidai.com.vn/wp-content/uploads/2022/06/Capture1-300x199.png" alt=""
-                                 width="502" height="333"
-                                 srcset="https://eidai.com.vn/wp-content/uploads/2022/06/Capture1-300x199.png 300w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture1-1024x681.png 1024w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture1-768x511.png 768w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture1-24x16.png 24w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture1-36x24.png 36w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture1-48x32.png 48w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture1-500x332.png 500w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture1.png 1047w"
-                                 sizes="(max-width: 502px) 100vw, 502px"/>
-                        </p>
-                        <p>SIAA <span class="fontstyle0">(The Society of International sustaining growth for Antimicrobial Articles) </span>là
-                            gì ? </p>
-                        <p>
-                            <span class="fontstyle0">SIAA (Hội đồng Công nghệ Sản phẩm Kháng khuẩn) là một tổ chức công nghiệp chứng nhận nhãn hiệu cho 1 doanh nghiệp nào đó gồm các nhà sản xuất, cơ quan kiểm tra kháng sinh của các chất kháng khuẩn, thuốc diệt nấm và các sản phẩm kháng khuẩn, kháng nấm đã được qua xử lý với mục tiêu phổ biến sản phẩm kháng khuẩn,kháng nấm được xử lý thích hợp và an toàn.</span>
-                        </p>
-                        <p>
-                            <img loading="lazy" class=" wp-image-760 aligncenter"
-                                 src="http://eidai.com.vn/wp-content/uploads/2022/06/Capture-300x118.png" alt=""
-                                 width="468" height="184"
-                                 srcset="https://eidai.com.vn/wp-content/uploads/2022/06/Capture-300x118.png 300w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture-24x9.png 24w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture-36x14.png 36w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture-48x19.png 48w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture-500x196.png 500w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture.png 600w"
-                                 sizes="(max-width: 468px) 100vw, 468px"/>
-                            <img loading="lazy" class="wp-image-763 aligncenter"
-                                 src="http://eidai.com.vn/wp-content/uploads/2022/06/Capture4-300x199.png" alt=""
-                                 width="469" height="311"
-                                 srcset="https://eidai.com.vn/wp-content/uploads/2022/06/Capture4-300x199.png 300w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture4-1024x679.png 1024w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture4-768x510.png 768w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture4-24x16.png 24w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture4-36x24.png 36w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture4-48x32.png 48w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture4-500x332.png 500w, https://eidai.com.vn/wp-content/uploads/2022/06/Capture4.png 1477w"
-                                 sizes="(max-width: 469px) 100vw, 469px"/>
-                        </p>
-                        <p>
-                            <span class="fontstyle0">Tiếp thu nhiều ý kiến không chỉ từ ngành công nghiệp mà còn từ đại diện người tiêu dùng, các chuyên gia, chính phủ, từ đó hội đồng SIAA đã thiết lập các quy tắc về chất lượng và an toàn cần thiết cho các sản phẩm chế biến kháng khuẩn. Nhãn hiệu SIAA là biểu tượng của sự an tâm cho sản phẩm tuân thủ các quy tắc đó.</span>
-                        </p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
+                        <?= $post->post_content ?>
                     </div>
                     <!-- .entry-content -->
                     <aside class="entry-taxonomy">

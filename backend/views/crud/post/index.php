@@ -111,6 +111,7 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 			'created_at',
 			'updated_at',
 			'deleted_at',
+			/*'post_content:ntext',*/
 			/*'post_title',*/
 			/*'post_slug',*/
                 ]

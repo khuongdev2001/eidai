@@ -22,6 +22,16 @@ class Post extends BasePost
         );
     }
 
+    public function getCategory()
+    {
+        return $this->hasOne(PostCategory::className(), ["id" => "category_id"]);
+    }
+
+    public function formName()
+    {
+        return "";
+    }
+
     public function rules()
     {
         return ArrayHelper::merge(

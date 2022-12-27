@@ -31,4 +31,9 @@ class PostCategory extends BasePostCategory
             ]
         );
     }
+
+    public function formName()
+    {
+        return "";
+    }
 }

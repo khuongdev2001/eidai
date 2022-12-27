@@ -2,6 +2,12 @@
 $config = [
     'homeUrl' => Yii::getAlias('@backendUrl'),
     'controllerNamespace' => 'backend\controllers',
+    'aliases' => [
+        '@app' => __DIR__ . '/../',
+        '@basePath' => __DIR__,
+        '@bower' => "@vendor/bower-asset",
+        "@web_asset" => __DIR__.'/../web/assets',
+    ],
     'defaultRoute' => 'end-user/home/site',
     'components' => [
         'fileStorage' => [

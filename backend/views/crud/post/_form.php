@@ -61,6 +61,9 @@ use yii\helpers\StringHelper;
 <!-- attribute deleted_at -->
 			<?= $form->field($model, 'deleted_at')->textInput() ?>
 
+<!-- attribute post_content -->
+			<?= $form->field($model, 'post_content')->textarea(['rows' => 6]) ?>
+
 <!-- attribute post_title -->
 			<?= $form->field($model, 'post_title')->textInput(['maxlength' => true]) ?>
 
