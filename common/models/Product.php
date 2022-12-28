@@ -37,4 +37,29 @@ class Product extends BaseProduct
     {
         return $this->hasOne(ProductCategory::className(), ["id" => "category_id"]);
     }
+
+    public function getCountProperty()
+    {
+        return $this->hasOne(ProductProperty::className(), ["product_id" => "id"])->count();
+    }
+
+    public function getProductSames()
+    {
+        $categorys = ProductCategory::find()->andWhere(["like", "tree", $this->category_id])->all();
+        return Product::find()->where(["category_id" => array_column($categorys, "id")])
+            ->andWhere(["<>", "id", $this->id])
+            ->limit(5)
+            ->all();
+    }
+
+    
+    public function getNext() {
+        $next = $this->find()->where(['>', 'id', $this->id])->orderBy('id asc')->one();
+        return $next;
+    }
+    
+    public function getPrev() {
+        $prev = $this->find()->where(['<', 'id', $this->id])->orderBy('id desc')->one();
+        return $prev;
+    }
 }

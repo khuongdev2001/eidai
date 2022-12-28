@@ -31,4 +31,9 @@ class Property extends BaseProperty
             ]
         );
     }
+
+    public function getProductPropertiesByProductId($productId)
+    {
+        return ProductProperty::find()->andWhere(["product_id" => $productId, "property_id" => $this->id])->all();
+    }
 }

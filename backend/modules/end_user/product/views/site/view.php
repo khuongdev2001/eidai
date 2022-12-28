@@ -5,6 +5,7 @@
  */
 
 use backend\modules\end_user\product\models\Product;
+use yii\helpers\Url;
 
 ?>
 <div id="content" class="site-content" tabindex="-1">
@@ -58,41 +59,57 @@ use backend\modules\end_user\product\models\Product;
                     </div>
                     <div class="woocommerce-tabs wc-tabs-wrapper">
                         <ul class="tabs wc-tabs" role="tablist">
-                            <li class="description_tab" id="tab-title-description" role="tab" aria-controls="tab-description">
-                                <a href="#tab-description"> Mô tả </a>
-                            </li>
-                            <li class="additional_information_tab" id="tab-title-additional_information" role="tab" aria-controls="tab-additional_information">
-                                <a href="#tab-additional_information"> Thông tin bổ sung </a>
-                            </li>
+                            <?php
+                            if (!empty($product->product_content)) {
+                            ?>
+                                <li class="description_tab" id="tab-title-description" role="tab" aria-controls="tab-description">
+                                    <a href="#tab-description"> Mô tả </a>
+                                </li>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            if ($product->countProperty) {
+                            ?>
+                                <li class="additional_information_tab" id="tab-title-additional_information" role="tab" aria-controls="tab-additional_information">
+                                    <a href="#tab-additional_information"> Thông tin bổ sung </a>
+                                </li>
+                            <?php
+                            }
+                            ?>
                             <li class="reviews_tab" id="tab-title-reviews" role="tab" aria-controls="tab-reviews">
                                 <a href="#tab-reviews"> Đánh giá (0) </a>
                             </li>
                         </ul>
-                        <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
-                            <h2>Mô tả</h2>
-                            <?= $product->product_content ?>
-                        </div>
+                        <?php
+                        if (!empty($product->product_content)) {
+                        ?>
+                            <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
+                                <h2>Mô tả</h2>
+                                <?= $product->product_content ?>
+                            </div>
+                        <?php
+                        }
+                        ?>
                         <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab" id="tab-additional_information" role="tabpanel" aria-labelledby="tab-title-additional_information">
                             <h2>Thông tin bổ sung</h2>
                             <table class="woocommerce-product-attributes shop_attributes">
-                                <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_kieu-lat">
-                                    <th class="woocommerce-product-attributes-item__label">Kiểu lát</th>
-                                    <td class="woocommerce-product-attributes-item__value">
-                                        <p>Lát thẳng</p>
-                                    </td>
-                                </tr>
-                                <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_loai-go">
-                                    <th class="woocommerce-product-attributes-item__label">Loại gỗ</th>
-                                    <td class="woocommerce-product-attributes-item__value">
-                                        <p>gỗ thích cứng, thích cứng</p>
-                                    </td>
-                                </tr>
-                                <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_loai-san">
-                                    <th class="woocommerce-product-attributes-item__label">Loại sàn</th>
-                                    <td class="woocommerce-product-attributes-item__value">
-                                        <p>tự nhiên kỹ thuật</p>
-                                    </td>
-                                </tr>
+                                <?php
+                                foreach ($properties as $property) {
+                                ?>
+                                    <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_kieu-lat">
+                                        <th class="woocommerce-product-attributes-item__label"><?= $property->property_name ?></th>
+                                        <td class="woocommerce-product-attributes-item__value">
+                                            <p>
+                                                <?= join(", ", array_map(function ($item) {
+                                                    return $item->property_value;
+                                                }, $property->getProductPropertiesByProductId($product->id))) ?>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
                             </table>
                         </div>
                         <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content wc-tab" id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
@@ -164,59 +181,56 @@ use backend\modules\end_user\product\models\Product;
                     <section class="related products">
                         <h2>Sản phẩm tương tự</h2>
                         <ul class="products columns-3">
-                            <li class="product type-product post-106 status-publish first instock product_cat-san-pham-noi-bat product_cat-san-go-tu-nhien-ky-thuat has-post-thumbnail shipping-taxable purchasable product-type-simple">
-                                <a href="https://eidai.com.vn/product/san-go-ki-thuat-go-phong-rd-2/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                                    <img width="324" height="243" src="https://eidai.com.vn/wp-content/uploads/2020/05/97973076_3219632964736299_2312181290020896768_o-324x243.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
-                                    <h2 class="woocommerce-loop-product__title">Sàn gỗ kỹ thuật &#8211; Gỗ óc chó 1P
-                                        (Bản rộng 90mm) (MRBS-WAL-C)</h2>
-                                    <span class="price">
-                                        <span class="woocommerce-Price-amount amount">
-                                            <bdi>3.050.000 <span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                            </bdi>
-                                        </span>
-                                    </span>
-                                </a>
-                                <a href="?add-to-cart=106" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="106" data-product_sku="" aria-label="Thêm &ldquo;Sàn gỗ kỹ thuật - Gỗ óc chó 1P (Bản rộng 90mm) (MRBS-WAL-C)&rdquo; vào giỏ hàng" rel="nofollow">Thêm vào giỏ hàng</a>
-                            </li>
-                            <li class="product type-product post-343 status-publish instock product_cat-san-pham-noi-bat product_cat-san-go-lat-xuong-ca product_cat-san-go-tu-nhien-ky-thuat has-post-thumbnail shipping-taxable purchasable product-type-simple">
-                                <a href="https://eidai.com.vn/product/san-go-xuong-ca-go-tu-nhien-oc-cho/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                                    <img width="324" height="243" src="https://eidai.com.vn/wp-content/uploads/2020/10/slide01-324x243.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
-                                    <h2 class="woocommerce-loop-product__title">Sàn gỗ xương cá – gỗ kỹ thuật óc chó đen
-                                        (MRHV-WAL-C)</h2>
-                                    <span class="price">
-                                        <span class="woocommerce-Price-amount amount">
-                                            <bdi>3.050.000 <span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                            </bdi>
-                                        </span>
-                                    </span>
-                                </a>
-                                <a href="?add-to-cart=343" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="343" data-product_sku="" aria-label="Thêm &ldquo;Sàn gỗ xương cá – gỗ kỹ thuật óc chó đen (MRHV-WAL-C)&rdquo; vào giỏ hàng" rel="nofollow">Thêm vào giỏ hàng</a>
-                            </li>
-                            <li class="product type-product post-376 status-publish last instock product_cat-san-go-tu-nhien-ky-thuat has-post-thumbnail shipping-taxable purchasable product-type-simple">
-                                <a href="https://eidai.com.vn/product/san-go-ky-thuat-go-anh-dao-2p/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                                    <img width="324" height="243" src="https://eidai.com.vn/wp-content/uploads/2020/06/K000004575-324x243.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
-                                    <h2 class="woocommerce-loop-product__title">Sàn gỗ kỹ thuật – Gỗ anh đào 2P
-                                        (MRNH-CHE-C)</h2>
-                                    <span class="price">
-                                        <span class="woocommerce-Price-amount amount">
-                                            <bdi>2.750.000 <span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                            </bdi>
-                                        </span>
-                                    </span>
-                                </a>
-                                <a href="?add-to-cart=376" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="376" data-product_sku="" aria-label="Thêm &ldquo;Sàn gỗ kỹ thuật – Gỗ anh đào 2P (MRNH-CHE-C)&rdquo; vào giỏ hàng" rel="nofollow">Thêm vào giỏ hàng</a>
-                            </li>
+                            <?php
+                            $index = 0;
+                            $classNames = ["first", "", "last"];
+                            foreach ($product->productSames as $productSame) {
+                                if (!isset($classNames[$index])) {
+                                    $index = 0;
+                                }
+                            ?>
+                                <li class="product type-product post-106 status-publish <?= $classNames[$index] ?> instock product_cat-san-pham-noi-bat product_cat-san-go-tu-nhien-ky-thuat has-post-thumbnail shipping-taxable purchasable product-type-simple">
+                                    <a href="<?= Url::to("?product_slug=" . $productSame->product_slug) ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                                        <img width="324" height="243" src="<?= $productSame->images
+                                                                                ? (isset(json_decode($productSame->images)[0]) ? json_decode($productSame->images)[0] : $productSame->images)
+                                                                                : null ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="<?= $productSame->product_title ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
+                                        <h2 class="woocommerce-loop-product__title"><?= $productSame->product_title ?></h2>
+                                        <span class="price"><span class="woocommerce-Price-amount amount"><bdi><?= number_format($productSame->price) ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
+                                    </a><a href="?add-to-cart=106" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="106" data-product_sku="" aria-label="Thêm &ldquo;Sàn gỗ kỹ thuật - Gỗ óc chó 1P (Bản rộng 90mm) (MRBS-WAL-C)&rdquo; vào giỏ hàng" rel="nofollow">Thêm vào giỏ hàng</a>
+                                </li>
+                            <?php
+                                $index++;
+                            }
+                            ?>
                         </ul>
                     </section>
                     <nav class="storefront-product-pagination" aria-label="Xem thêm sản phẩm">
-                        <a href="https://eidai.com.vn/product/san-go-ky-thuat-go-anh-dao-3p/" rel="prev">
-                            <img width="324" height="243" src="https://eidai.com.vn/wp-content/uploads/2020/06/K000004482-324x243.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
-                            <span class="storefront-product-pagination__title">Sàn gỗ kỹ thuật – Gỗ anh đào 3P (MRSH-CHE-C)</span>
-                        </a>
-                        <a href="https://eidai.com.vn/product/san-go-ky-thuat-go-anh-dao-3p-2/" rel="next">
-                            <img width="324" height="243" src="https://eidai.com.vn/wp-content/uploads/2020/06/MRSH-ROA1-3P-324x243.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
-                            <span class="storefront-product-pagination__title">Sàn gỗ kỹ thuật – Gỗ sồi đỏ 3P (MRSH-ROA-C)</span>
-                        </a>
+                        <?php
+                        if ($product->prev) {
+                        ?>
+                            <a href="<?= Url::to("?product_slug=" . $product->prev->product_slug) ?>" rel="prev">
+                                <img width="324" height="243" src="<?= $product->prev->images
+                                                                        ? (isset(json_decode($product->prev->images)[0]) ? json_decode($product->prev->images)[0] :  $product->prev->images)
+                                                                        : null ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
+                                <span class="storefront-product-pagination__title">
+                                    <?= $product->prev->product_title ?>
+                                </span>
+                            </a>
+                        <?php
+                        }
+                        if ($product->next) {
+                        ?>
+                            <a href="<?= Url::to("?product_slug=" . $product->next->product_slug) ?>" rel="next">
+                                <img width="324" height="243" src="<?= $product->next->images
+                                                                        ? (isset(json_decode($product->next->images)[0]) ? json_decode($product->next->images)[0] :  $product->next->images)
+                                                                        : null ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
+                                <span class="storefront-product-pagination__title">
+                                    <?= $product->next->product_title ?>
+                                </span>
+                            </a>
+                        <?php
+                        }
+                        ?>
                     </nav>
                     <!-- .storefront-product-pagination -->
                 </div>
@@ -293,7 +307,7 @@ $script = <<< JS
 		$('.woocommerce-product-gallery__image').zoom();
 	});
 JS;
-$style= <<< CSS
+$style = <<< CSS
     .flex-control-nav img{
         width: 65.88px !important;
         height: 65.88px !important;
