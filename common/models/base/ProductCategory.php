@@ -11,12 +11,14 @@ use Yii;
  *
  * @property integer $id
  * @property integer $user_id
+ * @property string $category_name
+ * @property string $parent_id
+ * @property string $tree
  * @property string $category_slug
  * @property integer $status
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
- * @property string $category_name
  * @property string $aliasModel
  */
 abstract class ProductCategory extends \common\models\base\ActiveRecord
@@ -39,8 +41,10 @@ abstract class ProductCategory extends \common\models\base\ActiveRecord
     {
         return [
             [['user_id', 'status'], 'integer'],
+            [['tree'], 'string'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['category_slug', 'category_name'], 'string', 'max' => 500]
+            [['category_name', 'category_slug'], 'string', 'max' => 500],
+            [['parent_id'], 'string', 'max' => 255]
         ];
     }
 
@@ -52,12 +56,14 @@ abstract class ProductCategory extends \common\models\base\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
+            'category_name' => 'Category Name',
+            'parent_id' => 'Parent ID',
+            'tree' => 'Tree',
             'category_slug' => 'Category Slug',
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
-            'category_name' => 'Category Name',
         ];
     }
 

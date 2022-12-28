@@ -106,11 +106,13 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
         ],
 			'user_id',
 			'status',
+			'tree:ntext',
 			'created_at',
 			'updated_at',
 			'deleted_at',
-			'category_slug',
 			'category_name',
+			/*'category_slug',*/
+			/*'parent_id',*/
                 ]
         ]); ?>
     </div>

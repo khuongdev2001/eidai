@@ -46,6 +46,9 @@ use yii\helpers\StringHelper;
 <!-- attribute status -->
 			<?= $form->field($model, 'status')->textInput() ?>
 
+<!-- attribute tree -->
+			<?= $form->field($model, 'tree')->textarea(['rows' => 6]) ?>
+
 <!-- attribute created_at -->
 			<?= $form->field($model, 'created_at')->textInput() ?>
 
@@ -55,11 +58,14 @@ use yii\helpers\StringHelper;
 <!-- attribute deleted_at -->
 			<?= $form->field($model, 'deleted_at')->textInput() ?>
 
+<!-- attribute category_name -->
+			<?= $form->field($model, 'category_name')->textInput(['maxlength' => true]) ?>
+
 <!-- attribute category_slug -->
 			<?= $form->field($model, 'category_slug')->textInput(['maxlength' => true]) ?>
 
-<!-- attribute category_name -->
-			<?= $form->field($model, 'category_name')->textInput(['maxlength' => true]) ?>
+<!-- attribute parent_id -->
+			<?= $form->field($model, 'parent_id')->textInput(['maxlength' => true]) ?>
         </p>
         <?php $this->endBlock(); ?>
         

@@ -45,9 +45,9 @@
     },
     "providerlist": {
         "value": {
-            "222": "schmunk42\\giiant\\generators\\crud\\providers\\core\\CallbackProvider",
-            "224": "schmunk42\\giiant\\generators\\crud\\providers\\core\\OptsProvider",
-            "225": "schmunk42\\giiant\\generators\\crud\\providers\\core\\RelationProvider"
+            "213": "schmunk42\\giiant\\generators\\crud\\providers\\core\\CallbackProvider",
+            "215": "schmunk42\\giiant\\generators\\crud\\providers\\core\\OptsProvider",
+            "216": "schmunk42\\giiant\\generators\\crud\\providers\\core\\RelationProvider"
         },
         "name": "providerList"
     },

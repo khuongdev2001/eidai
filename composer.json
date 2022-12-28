@@ -1,46 +1,53 @@
 {
-    "name": "php/eidai",
-    "description": "Eidai",
-    "keywords": [
-        "Eidai"
-    ],
-    "authors": [{
-        "name": "Eugene Terentev",
-        "email": "eugene@terentev.net",
-        "homepage": "https://terentev.net"
-    }],
-    "type": "project",
-    "require": {
-        "php": ">=7.1",
-        "yiisoft/yii2": "^2.0.32",
-        "yii2-starter-kit/yii2-file-kit": "^2.0.0",
-        "vlucas/phpdotenv": "^2.0",
-        "symfony/process": "^4.0",
-        "guzzlehttp/guzzle": "^6.0",
-        "schmunk42/yii2-giiant": "*",
-        "yii2tech/ar-softdelete": "*"
-    },
-    "require-dev": {
-        "yiisoft/yii2-debug": "^2.0.0",
-        "yiisoft/yii2-gii": "^2.0.0",
-        "yiisoft/yii2-faker": "^2.0.0"
-    },
-    "config": {
-        "process-timeout": 1800,
-        "optimize-autoloader": true,
-        "allow-plugins": {
-            "yiisoft/yii2-composer": true
-        },
-        "platform": {
-            "php": "8.2"
-        },
-        "platform-check": false
-    },
-    "repositories": [{
-        "type": "composer",
-        "url": "https://asset-packagist.org"
-    }],
-    "archive": {
-        "exclude": ["docs"]
+  "name": "php/eidai",
+  "description": "Eidai",
+  "keywords": [
+    "Eidai"
+  ],
+  "authors": [
+    {
+      "name": "Eugene Terentev",
+      "email": "eugene@terentev.net",
+      "homepage": "https://terentev.net"
     }
+  ],
+  "type": "project",
+  "require": {
+    "php": ">=7.1",
+    "yiisoft/yii2": "^2.0.32",
+    "yii2-starter-kit/yii2-file-kit": "^2.0.0",
+    "vlucas/phpdotenv": "^2.0",
+    "symfony/process": "^4.0",
+    "guzzlehttp/guzzle": "^6.0",
+    "schmunk42/yii2-giiant": "*",
+    "yii2tech/ar-softdelete": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "^2.0.0",
+    "yiisoft/yii2-gii": "^2.0.0",
+    "yiisoft/yii2-faker": "^2.0.0"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    },
+    "platform": {
+      "php": "8.2"
+    },
+    "platform-check": false
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "archive": {
+    "exclude": [
+      "docs"
+    ]
+  }
 }

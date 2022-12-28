@@ -21,17 +21,21 @@ use yii\widgets\ActiveForm;
 
 		<?= $form->field($model, 'user_id') ?>
 
-		<?= $form->field($model, 'category_slug') ?>
+		<?= $form->field($model, 'category_name') ?>
 
-		<?= $form->field($model, 'status') ?>
+		<?= $form->field($model, 'parent_id') ?>
 
-		<?= $form->field($model, 'created_at') ?>
+		<?= $form->field($model, 'tree') ?>
+
+		<?php // echo $form->field($model, 'category_slug') ?>
+
+		<?php // echo $form->field($model, 'status') ?>
+
+		<?php // echo $form->field($model, 'created_at') ?>
 
 		<?php // echo $form->field($model, 'updated_at') ?>
 
 		<?php // echo $form->field($model, 'deleted_at') ?>
-
-		<?php // echo $form->field($model, 'category_name') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
