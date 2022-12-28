@@ -123,10 +123,11 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 			    'format' => 'raw',
 			],
 			'status',
+			'product_content:ntext',
 			'product_excerpt:ntext',
 			'images:ntext',
 			'price',
-			'old_price',
+			/*'old_price',*/
 			/*'publish_at',*/
 			/*'created_at',*/
 			/*'updated_at',*/

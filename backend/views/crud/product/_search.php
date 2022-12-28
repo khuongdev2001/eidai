@@ -23,9 +23,11 @@ use yii\widgets\ActiveForm;
 
 		<?= $form->field($model, 'product_title') ?>
 
+		<?= $form->field($model, 'product_content') ?>
+
 		<?= $form->field($model, 'category_id') ?>
 
-		<?= $form->field($model, 'product_slug') ?>
+		<?php // echo $form->field($model, 'product_slug') ?>
 
 		<?php // echo $form->field($model, 'product_excerpt') ?>
 

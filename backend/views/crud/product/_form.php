@@ -56,6 +56,9 @@ $form->field($model, 'category_id')->dropDownList(
 <!-- attribute status -->
 			<?= $form->field($model, 'status')->textInput() ?>
 
+<!-- attribute product_content -->
+			<?= $form->field($model, 'product_content')->textarea(['rows' => 6]) ?>
+
 <!-- attribute product_excerpt -->
 			<?= $form->field($model, 'product_excerpt')->textarea(['rows' => 6]) ?>
 

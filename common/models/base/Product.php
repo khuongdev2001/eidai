@@ -12,6 +12,7 @@ use Yii;
  * @property integer $id
  * @property integer $user_id
  * @property string $product_title
+ * @property string $product_content
  * @property integer $category_id
  * @property string $product_slug
  * @property string $product_excerpt
@@ -45,7 +46,7 @@ abstract class Product extends \common\models\base\ActiveRecord
     {
         return [
             [['user_id', 'category_id', 'status'], 'integer'],
-            [['product_excerpt', 'images'], 'string'],
+            [['product_content', 'product_excerpt', 'images'], 'string'],
             [['price', 'old_price'], 'number'],
             [['publish_at', 'created_at', 'updated_at', 'deleted_at'], 'safe'],
             [['product_title', 'product_slug'], 'string', 'max' => 500]
@@ -61,6 +62,7 @@ abstract class Product extends \common\models\base\ActiveRecord
             'id' => 'ID',
             'user_id' => 'User ID',
             'product_title' => 'Product Title',
+            'product_content' => 'Product Content',
             'category_id' => 'Category ID',
             'product_slug' => 'Product Slug',
             'product_excerpt' => 'Product Excerpt',

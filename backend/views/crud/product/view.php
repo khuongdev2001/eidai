@@ -92,6 +92,7 @@ $this->params['breadcrumbs'][] = 'View';
         '<span class="label label-warning">?</span>'),
 ],
         'status',
+        'product_content:ntext',
         'product_excerpt:ntext',
         'images:ntext',
         'price',

@@ -15,6 +15,11 @@ class ProductCategoryQuery extends \common\models\base\ActiveQuery
         return $this;
     }*/
 
+    public function parent()
+    {
+        return $this->andWhere(["parent_id" => 0]);
+    }
+
     /**
      * @inheritdoc
      * @return ProductCategory[]|array
