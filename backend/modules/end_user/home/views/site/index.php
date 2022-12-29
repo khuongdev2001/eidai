@@ -103,7 +103,7 @@
                                             <div class="wc-block-grid__product-image">
                                                 <img width="324" height="243" src="<?= $product->images
                                                                                         ? (isset(json_decode($product->images)[0]) ? json_decode($product->images)[0] : $product->images)
-                                                                                        : null ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Sàn gỗ kỹ thuật - Gỗ óc chó 1P (Bản rộng 90mm) (MRBS-WAL-C)" loading="lazy" />
+                                                                                        : null ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="<?= $product->product_title ?>" loading="lazy" />
                                             </div>
                                             <div class="wc-block-grid__product-title">
                                                 <?= $product->product_title ?>

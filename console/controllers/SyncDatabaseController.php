@@ -69,7 +69,7 @@ class SyncDatabaseController extends Controller
             $productCategory->category_slug = $wpProductCategory["slug"];
             $productCategory->status = 1;
             $productCategory->parent_id = $wpProductCategory["parent"];
-            $productCategory->tree = $wpProductCategory["parent"] ?: "";
+            $productCategory->tree = ($wpProductCategory["parent"] ?: "") . "," . $wpProductCategory["term_id"];
             $productCategory->save(false);
         }
     }

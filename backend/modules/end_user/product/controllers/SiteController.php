@@ -5,6 +5,7 @@ namespace backend\modules\end_user\product\controllers;
 use Yii;
 use backend\modules\end_user\product\models\Product;
 use backend\modules\end_user\product\models\search\ProductSearch;
+use common\models\Property;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -54,8 +55,10 @@ class SiteController extends Controller
         if (!$product) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+        $properties = Property::find()->all();
         return $this->render('view', [
             'product' => $product,
+            "properties" => $properties
         ]);
     }
 
