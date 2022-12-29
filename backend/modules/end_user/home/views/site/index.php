@@ -141,7 +141,7 @@
                                         foreach ($products as $product) {
                                         ?>
                                             <li class="wc-block-grid__product">
-                                                <a href="<?= $product->product_slug ?>" class="wc-block-grid__product-link">
+                                                <a href="<?= Url::to("end-user/product/site/view?product_slug=" . $product->product_slug) ?>" class="wc-block-grid__product-link">
                                                     <div class="wc-block-grid__product-image">
                                                         <img width="324" height="243" src="<?= $product->images
                                                                                                 ? (isset(json_decode($product->images)[0]) ? json_decode($product->images)[0] : $product->images)
@@ -179,7 +179,7 @@
                                         foreach ($products as $product) {
                                         ?>
                                             <li class="wc-block-grid__product">
-                                                <a href="<?= $product->product_title ?>" class="wc-block-grid__product-link">
+                                                <a href="<?= Url::to("end-user/product/site/view?product_slug=" . $product->product_slug) ?>" class="wc-block-grid__product-link">
                                                     <div class="wc-block-grid__product-image">
                                                         <img width="324" height="243" src="<?= $product->images
                                                                                                 ? (isset(json_decode($product->images)[0]) ? json_decode($product->images)[0] : $product->images)
@@ -219,7 +219,7 @@
                                 foreach ($products as $product) {
                                 ?>
                                     <li class="wc-block-grid__product">
-                                        <a href="<?= $product->product_title ?>" class="wc-block-grid__product-link">
+                                        <a href="<?= Url::to("end-user/product/site/view?product_slug=" . $product->product_slug) ?>" class="wc-block-grid__product-link">
                                             <div class="wc-block-grid__product-image">
                                                 <img width="324" height="243" src="<?= $product->images
                                                                                         ? (isset(json_decode($product->images)[0]) ? json_decode($product->images)[0] : $product->images)
@@ -257,7 +257,7 @@
                                 foreach ($products as $product) {
                                 ?>
                                     <li class="wc-block-grid__product">
-                                        <a href="<?= $product->product_title ?>" class="wc-block-grid__product-link">
+                                        <a href="<?= Url::to("end-user/product/site/view?product_slug=" . $product->product_slug) ?>" class="wc-block-grid__product-link">
                                             <div class="wc-block-grid__product-image">
                                                 <img width="324" height="243" src="<?=
                                                                                     $product->images
@@ -296,7 +296,7 @@
                                 foreach ($products as $product) {
                                 ?>
                                     <li class="wc-block-grid__product">
-                                        <a href=" ?>" class="wc-block-grid__product-link">
+                                        <a href="<?= Url::to("end-user/product/site/view?product_slug=" . $product->product_slug) ?>" class="wc-block-grid__product-link">
                                             <div class="wc-block-grid__product-image">
                                                 <img width="324" height="243" src="<?= $product->images
                                                                                         ? (isset(json_decode($product->images)[0]) ? json_decode($product->images)[0] : $product->images)
