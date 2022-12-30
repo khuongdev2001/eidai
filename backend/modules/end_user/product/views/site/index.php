@@ -51,7 +51,7 @@ Pjax::begin(['id' => 'content_ajax']);
                         <li class="product type-product post-106 status-publish <?= $classNames[$index] ?> instock product_cat-san-pham-noi-bat product_cat-san-go-tu-nhien-ky-thuat has-post-thumbnail shipping-taxable purchasable product-type-simple">
                             <a href="<?= Url::to("?product_slug=" . $product->product_slug) ?>"
                                class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                                <img width="324" height="243" src="<?= $product->images
+                                <img width="324" height="243" style="height: 150px;" src="<?= $product->images
                                     ? (isset(json_decode($product->images)[0]) ? json_decode($product->images)[0] : $product->images)
                                     : null ?>"
                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
