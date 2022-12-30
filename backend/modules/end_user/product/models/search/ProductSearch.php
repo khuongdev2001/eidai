@@ -2,10 +2,12 @@
 
 namespace backend\modules\end_user\product\models\search;
 
+use backend\models\search\ProductCategory;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\modules\end_user\product\models\Product;
+use common\models\base\Category;
 
 /**
  * ProductSearch represents the model behind the search form about `backend\modules\end_user\product\models\Product`.
@@ -57,7 +59,7 @@ class ProductSearch extends Product
         $query->andFilterWhere([
             'id' => $this->id,
             'user_id' => $this->user_id,
-            'category_id' => $this->category_id,
+            'category_id' => array_column(ProductCategory::find()->where(["like", "tree", $this->category_id])->all(), "id"),
             'price' => $this->price,
             'old_price' => $this->old_price,
             'status' => $this->status,
