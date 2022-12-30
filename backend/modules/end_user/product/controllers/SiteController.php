@@ -37,7 +37,12 @@ class SiteController extends Controller
     {
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        if (Yii::$app->request->isAjax) {
+            return $this->renderAjax("index.php", [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -46,8 +51,9 @@ class SiteController extends Controller
 
     /**
      * Displays a single Product model.
-     * @param int $id ID
+     * @param $product_slug
      * @return mixed
+     * @throws NotFoundHttpException
      */
     public function actionView($product_slug)
     {

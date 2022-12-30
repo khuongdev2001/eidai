@@ -12,6 +12,8 @@ use backend\modules\end_user\product\models\Product;
  */
 class ProductSearch extends Product
 {
+    public $s;
+
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class ProductSearch extends Product
     {
         return [
             [['id', 'user_id', 'category_id', 'status'], 'integer'],
-            [['product_title', 'product_slug', 'product_excerpt', 'images', 'publish_at', 'created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['product_title', 'product_slug', 'product_excerpt', 'images', 'publish_at', 'created_at', 'updated_at', 'deleted_at', 's'], 'safe'],
             [['price', 'old_price'], 'number'],
         ];
     }
@@ -42,13 +44,13 @@ class ProductSearch extends Product
      */
     public function search($params)
     {
-        $query = Product::find();
+        $query = Product::find()->joinWith("category")->groupBy("products.id");
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
-        if (!($this->load($params) && $this->validate())) {
+        if (!($this->load($params, "") && $this->validate())) {
             return $dataProvider;
         }
 
@@ -65,7 +67,7 @@ class ProductSearch extends Product
             'deleted_at' => $this->deleted_at,
         ]);
 
-        $query->andFilterWhere(['like', 'product_title', $this->product_title])
+        $query->andFilterWhere(['like', 'product_title', $this->s])
             ->andFilterWhere(['like', 'product_slug', $this->product_slug])
             ->andFilterWhere(['like', 'product_excerpt', $this->product_excerpt])
             ->andFilterWhere(['like', 'images', $this->images]);
