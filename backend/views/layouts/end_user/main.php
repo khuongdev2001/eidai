@@ -9,6 +9,7 @@ use yii\web\View;
 /* @var $this View */
 /* @var $content string */
 $module_id = Yii::$app->controller->module->id;
+$this->registerAssetBundle(\yii\widgets\PjaxAsset::class);
 $bundle = BackendAsset::register($this);
 if (in_array($module_id, ["product"])) {
     ProductIndexAsset::register($this);

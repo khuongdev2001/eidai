@@ -50,7 +50,6 @@ class BackendAsset extends AssetBundle
             'css/plugins/hotline-phone-ring/style-2.css'
         ], $inlineAsset->css);
         $this->js = array_merge([
-            'js/jquery.js?t=' . time(),
             'js/jquery-migrate.js?t=' . time(),
             'js/plugins/smart-slider-3/n2.min.js',
             'js/plugins/smart-slider-3/w-bullet.min.js',

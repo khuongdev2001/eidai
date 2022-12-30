@@ -2,6 +2,7 @@
 
 use common\models\ProductCategory;
 use yii\helpers\Url;
+
 ?>
 <header id="masthead" class="site-header" role="banner" style="">
     <div class="header-social" style="max-width: 1080px; margin-left: auto; margin-right: auto; margin-bottom: 0px; margin-top:15px;">
@@ -32,14 +33,14 @@ use yii\helpers\Url;
                                 $parentCategories = ProductCategory::find()->parent()->andWhere(["category_slug" => "tat-ca-san-pham"])->all();
                                 foreach ($parentCategories as $parentCategory) {
                                 ?>
-                                    <a href="https://eidai.com.vn/product-category/tat-ca-san-pham/"><?= $parentCategory->category_name ?></a>
+                                    <a href="<?= Yii::$app->urlManagerBackend->hostInfo . "/end-user/product/site?category_id=" . $parentCategory->id ?>"><?= $parentCategory->category_name ?></a>
                                     <ul class="sub-menu">
                                         <?php
                                         $childCategories = ProductCategory::find()->where(["parent_id" => $parentCategory->id])->all();
                                         foreach ($childCategories as $childCategory) {
                                         ?>
                                             <li id="menu-item-22" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-22">
-                                                <a href="https://eidai.com.vn/product-category/tat-ca-san-pham/san-go-lat-xuong-ca/">
+                                                <a href="<?= Yii::$app->urlManagerBackend->hostInfo . "/end-user/product/site?category_id=" . $childCategory->id ?>">
                                                     <?= $childCategory->category_name ?>
                                                 </a>
                                             </li>
@@ -55,13 +56,17 @@ use yii\helpers\Url;
                                 <a href="https://eidai.com.vn/product-category/du-an-tieu-bieu/">DỰ ÁN TIÊU BIỂU</a>
                             </li>
                             <li id="menu-item-423" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-423">
-                                <a href="/end-user/page/site/view?page_slug=danh-sach-showroom-dai-ly">DANH SÁCH SHOWROOM/ĐẠI LÝ</a>
+                                <a href="/end-user/page/site/view?page_slug=danh-sach-showroom-dai-ly">DANH SÁCH
+                                    SHOWROOM/ĐẠI LÝ</a>
                             </li>
                             <li id="menu-item-431" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-431">
-                                <a href="/end-user/post/site?category_slug=tin-tuc-and-bai-viet">TIN TỨC &#038; BÀI VIẾT</a>
+                                <a href="/end-user/post/site?category_slug=tin-tuc-and-bai-viet">TIN TỨC &#038; BÀI
+                                    VIẾT</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-403" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-403">
-                                        <a href="/end-user/post/site/view?post_slug=chao-moi-nguoi">Ký kết hợp tác phân phối sàn gỗ
+                                        <a href="/end-user/post/site/view?post_slug=chao-moi-nguoi">Ký kết hợp tác
+                                            phân
+                                            phối sàn gỗ
                                             EIDAI</a>
                                     </li>
                                     <li id="menu-item-428" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-428">
@@ -95,7 +100,8 @@ use yii\helpers\Url;
                                     GỖ TỰ NHIÊN KT</a>
                             </li>
                             <li id="menu-item-238" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-238">
-                                <a href="https://eidai.com.vn/product-category/tat-ca-san-pham/san-go-tu-nhien/">SÀN GỖ
+                                <a href="https://eidai.com.vn/product-category/tat-ca-san-pham/san-go-tu-nhien/">SÀN
+                                    GỖ
                                     TỰ NHIÊN</a>
                             </li>
                             <li id="menu-item-239" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-239">
@@ -134,9 +140,9 @@ use yii\helpers\Url;
 <div class="header-widget-region" role="complementary">
     <div class="col-full">
         <div id="woocommerce_product_search-2" class="widget woocommerce widget_product_search">
-            <form role="search" method="get" class="woocommerce-product-search" action="https://eidai.com.vn/">
+            <form role="search" method="get" class="woocommerce-product-search" action="/end-user/product/site/index">
                 <label class="screen-reader-text" for="woocommerce-product-search-field-1">Tìm kiếm:</label>
-                <input type="search" id="woocommerce-product-search-field-1" class="search-field" placeholder="Tìm sản phẩm&hellip;" value="" name="s" />
+                <input type="search" id="woocommerce-product-search-field-1" class="search-field" placeholder="Tìm sản phẩm&hellip;" value="<?= Yii::$app->request->get("s") ?>" name="s" />
                 <button type="submit" value="Tìm kiếm">Tìm kiếm</button>
                 <input type="hidden" name="post_type" value="product" />
             </form>
