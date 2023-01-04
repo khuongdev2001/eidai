@@ -57,7 +57,7 @@ Pjax::begin(['id' => 'content_ajax']);
                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                      alt="" loading="lazy"/>
                                 <h2 class="woocommerce-loop-product__title"><?= $product->product_title ?></h2>
-                                <span class="price"><span class="woocommerce-Price-amount amount"><bdi><?= number_format($product->price) ?><span
+                                <span class="price"><span class="woocommerce-Price-amount amount"><bdi><?= number_format(floatval($product->price))?><span
                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
                             </a><a href="?add-to-cart=106" data-quantity="1"
                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
