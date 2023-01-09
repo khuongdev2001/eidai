@@ -131,7 +131,7 @@ Pjax::begin(['id' => 'content_ajax']);
                             <?php
                             foreach ($property->propertyChilds as $propertyChild) {
                                 ?>
-                                <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term chosen"><a
+                                <li attr-filter-key="<?=$property->property_slug?>" attr-filter-value="<?=$propertyChild->id ?>" class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term"><a
                                             rel="nofollow"
                                             href="https://eidai.com.vn/product-category/tat-ca-san-pham/san-go-tu-nhien-ky-thuat/?filter_kieu-lat=lat-thang&#038;query_type_kieu-lat=or">
                                         <?= $propertyChild->property_value ?>
@@ -165,8 +165,10 @@ $script = <<< JS
                 container: '#content_ajax',
             });
         });
-        $(".woocommerce-widget-layered-nav-list__item a").click((e)=>{
-            console.log(e.currentTarget.parentElement.classList.toggle("chosen"));
+        const filters = [];
+        $(".woocommerce-widget-layered-nav-list__item").click((e)=>{
+            console.log($(this));
+            // console.log(e.currentTarget.parentElement.classList.toggle("chosen"));
             e.preventDefault();
         }) 
     });
