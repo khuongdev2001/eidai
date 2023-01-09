@@ -2,11 +2,11 @@
 
 namespace backend\modules\end_user\product\controllers;
 
+use backend\modules\end_user\product\models\Property;
 use Yii;
 use backend\modules\end_user\product\models\Product;
 use backend\modules\end_user\product\models\search\ProductSearch;
 use common\models\ProductCategory;
-use common\models\Property;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -39,17 +39,20 @@ class SiteController extends Controller
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $category = ProductCategory::find()->where(["id" => Yii::$app->request->get("category_id", 29)])->one();
+        $properties = Property::find()->with("propertyChilds")->all();
         if (Yii::$app->request->isAjax) {
             return $this->renderAjax("index.php", [
                 'searchModel' => $searchModel,
                 'category' => $category,
                 'dataProvider' => $dataProvider,
+                'properties' => $properties
             ]);
         }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'category' => $category,
             'dataProvider' => $dataProvider,
+            'properties' => $properties
         ]);
     }
 

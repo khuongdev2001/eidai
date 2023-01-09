@@ -36,4 +36,9 @@ class Property extends BaseProperty
     {
         return ProductProperty::find()->andWhere(["product_id" => $productId, "property_id" => $this->id])->all();
     }
+
+    public function getPropertyChilds()
+    {
+        return $this->hasMany(ProductProperty::className(), ["property_id" => "id"])->groupBy("property_value");
+    }
 }
