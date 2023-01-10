@@ -58,11 +58,10 @@ class ProductSearch extends Product
         if (!($this->load($params, "") && $this->validate())) {
             return $dataProvider;
         }
-
         $query->andFilterWhere([
             'id' => $this->id,
             'user_id' => $this->user_id,
-            'category_id' => array_column(ProductCategory::find()->where(["like", "tree", $this->category_id ?? ""])->all(), "id"),
+            'category_id' => array_column(ProductCategory::find()->where(["like", "tree", $this->category_id])->all(), "id") ?: $this->category_id,
             'price' => $this->price,
             'old_price' => $this->old_price,
             'status' => $this->status,

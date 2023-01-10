@@ -52,14 +52,26 @@ class Product extends BaseProduct
             ->all();
     }
 
-    
-    public function getNext() {
+
+    public function getNext()
+    {
         $next = $this->find()->where(['>', 'id', $this->id])->orderBy('id asc')->one();
         return $next;
     }
-    
-    public function getPrev() {
+
+    public function getPrev()
+    {
         $prev = $this->find()->where(['<', 'id', $this->id])->orderBy('id desc')->one();
         return $prev;
+    }
+
+    public function getProperties()
+    {
+
+    }
+
+    public function formName()
+    {
+        return "";
     }
 }
