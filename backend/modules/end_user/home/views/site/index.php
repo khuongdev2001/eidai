@@ -110,7 +110,7 @@
                                             </div>
                                         </a>
                                         <div class="wc-block-grid__product-price price">
-                                            <span class="woocommerce-Price-amount amount">3.050.000 <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                            <span class="woocommerce-Price-amount amount" style=" color: #0f753d;">3.050.000 <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                             </span>
                                         </div>
                                     </li>
@@ -121,14 +121,14 @@
                         </div>
                         <div class="wp-container-2 wp-block-buttons aligncenter">
                             <div class="wp-block-button">
-                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href="http://eidai.com.vn/product-category/san-pham-noi-bat">Xem tiếp</a>
+                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href=<?=Url::to("end-user/product/site?category_id=15")?>>Xem tiếp</a>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="wp-container-4 wp-block-group">
                             <div class="wp-block-group__inner-container">
                                 <h2>
-                                    <a href="http://eidai.com.vn/product-category/san-go-tu-nhien-ky-thuat/">
+                                    <a href=<?=Url::to("end-user/product/site?category_id=23")?>>
                                         <span class="has-inline-color has-vivid-green-cyan-color">
                                             <strong>Sàn gỗ tự nhiên kỹ thuật</strong>
                                         </span>
@@ -150,7 +150,7 @@
                                                     <div class="wc-block-grid__product-title"><?= $product->product_title ?></div>
                                                 </a>
                                                 <div class="wc-block-grid__product-price price">
-                                                    <span class="woocommerce-Price-amount amount"><?= $product->price ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                    <span class="woocommerce-Price-amount amount" style=" color: #0f753d;"><?= number_format($product->price) ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                     </span>
                                                 </div>
                                             </li>
@@ -161,12 +161,12 @@
                                 </div>
                                 <div class="wp-container-3 wp-block-buttons aligncenter">
                                     <div class="wp-block-button">
-                                        <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href="http://eidai.com.vn/product-category/san-go-tu-nhien-ky-thuat/">Xem
+                                        <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href=<?=Url::to("end-user/product/site?category_id=23")?>>Xem
                                             tiếp</a>
                                     </div>
                                 </div>
                                 <h2>
-                                    <a href="http://eidai.com.vn/product-category/san-go-tu-nhien/">
+                                    <a href=<?=Url::to("end-user/product/site?category_id=16")?>>
                                         <span class="has-inline-color has-vivid-green-cyan-color">
                                             <strong>Sàn gỗ tự nhiên</strong>
                                         </span>
@@ -188,7 +188,7 @@
                                                     <div class="wc-block-grid__product-title"><?= $product->product_title ?></div>
                                                 </a>
                                                 <div class="wc-block-grid__product-price price">
-                                                    <span class="woocommerce-Price-amount amount"><?= $product->price ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                    <span class="woocommerce-Price-amount amount " style ="color: #0f753d;"><?= number_format($product->price) ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                     </span>
                                                 </div>
                                             </li>
@@ -201,12 +201,12 @@
                         </div>
                         <div class="wp-container-5 wp-block-buttons aligncenter">
                             <div class="wp-block-button">
-                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href="http://eidai.com.vn/product-category/san-go-tu-nhien/">Xem tiếp</a>
+                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href=<?=Url::to("end-user/product/site?category_id=16")?>>Xem tiếp</a>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <h2 class="has-text-align-left">
-                            <a href="http://eidai.com.vn/product-category/san-go-olefin-ky-thuat/">
+                            <a href=<?=Url::to("end-user/product/site?category_id=17")?>>
                                 <span class="has-inline-color has-vivid-green-cyan-color">
                                     <strong>Sàn gỗ Olefin kỹ thuật</strong>
                                 </span>
@@ -228,7 +228,7 @@
                                             <div class="wc-block-grid__product-title"><?= $product->product_title ?></div>
                                         </a>
                                         <div class="wc-block-grid__product-price price">
-                                            <span class="woocommerce-Price-amount amount"><?= $product->price ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                            <span class="woocommerce-Price-amount amount" style=" color: #0f753d;"><?= number_format($product->price) ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                             </span>
                                         </div>
                                     </li>
@@ -239,12 +239,12 @@
                         </div>
                         <div class="wp-container-6 wp-block-buttons aligncenter">
                             <div class="wp-block-button">
-                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href="http://eidai.com.vn/product-category/san-go-olefin-ky-thuat/">Xem tiếp</a>
+                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href=<?=Url::to("end-user/product/site?category_id=17")?>>Xem tiếp</a>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <h2 class="has-text-align-left">
-                            <a href="http://eidai.com.vn/product-category/san-go-lat-xuong-ca/">
+                            <a href=<?=Url::to("end-user/product/site?category_id=18")?>>
                                 <span class="has-inline-color has-vivid-green-cyan-color">
                                     <strong>Sàn gỗ lát xương cá</strong>
                                 </span>
@@ -267,7 +267,7 @@
                                             <div class="wc-block-grid__product-title"><?= $product->product_title ?></div>
                                         </a>
                                         <div class="wc-block-grid__product-price price">
-                                            <span class="woocommerce-Price-amount amount"><?= $product->price ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                            <span class="woocommerce-Price-amount amount" style=" color: #0f753d;"><?= number_format($product->price) ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                             </span>
                                         </div>
                                     </li>
@@ -278,12 +278,12 @@
                         </div>
                         <div class="wp-container-7 wp-block-buttons aligncenter">
                             <div class="wp-block-button">
-                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href="http://eidai.com.vn/product-category/san-go-lat-xuong-ca/">Xem tiếp</a>
+                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href=<?=Url::to("end-user/product/site?category_id=18")?>>Xem tiếp</a>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <h2 class="has-text-align-left">
-                            <a href="http://eidai.com.vn/product-category/du-an-tieu-bieu/">
+                            <a href=<?=Url::to("end-user/product/site?category_id=19")?>>
                                 <span class="has-inline-color has-vivid-green-cyan-color">
                                     <strong>Dự án tiêu biểu</strong>
                                 </span>
@@ -305,8 +305,7 @@
                                             <div class="wc-block-grid__product-title"><?= $product->product_title ?></div>
                                         </a>
                                         <div class="wc-block-grid__product-price price">
-                                            <span class="woocommerce-Price-amount amount"><?= $product->price ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                            </span>
+
                                         </div>
                                     </li>
                                 <?php
@@ -316,7 +315,7 @@
                         </div>
                         <div class="wp-container-8 wp-block-buttons aligncenter">
                             <div class="wp-block-button">
-                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href="http://eidai.com.vn/product-category/du-an-tieu-bieu/">Xem tiếp</a>
+                                <a class="wp-block-button__link has-text-color has-very-dark-gray-color has-background has-vivid-green-cyan-background-color" style="border-radius: 25px;" href=<?=Url::to("end-user/product/site?category_id=19")?>>Xem tiếp</a>
                             </div>
                         </div>
                         <p>&nbsp;</p>
@@ -332,7 +331,7 @@
                         </div>
                         <div class="wp-container-9 wp-block-buttons aligncenter">
                             <div class="wp-block-button">
-                                <a class="wp-block-button__link" href="https://drive.google.com/drive/folders/1CJAD7Z8D2ljfiVvRzaHhocv9MCVGZmha?usp=sharing" target="_blank" rel="noreferrer noopener">Bấm để tải về Catalog</a>
+                                <a class="wp-block-button__link" style="background-color: #eeeeee; color: #166b20" href="https://drive.google.com/drive/folders/1CJAD7Z8D2ljfiVvRzaHhocv9MCVGZmha?usp=sharing" target="_blank" rel="noreferrer noopener">Bấm để tải về Catalog</a>
                             </div>
                         </div>
                         <div class="wp-container-10 wp-block-group">
