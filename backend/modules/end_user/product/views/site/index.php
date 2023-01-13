@@ -61,7 +61,7 @@ Pjax::begin(['id' => 'content_ajax']);
                                         <?php
                                         if ($product->price) {
                                         ?>
-                                            <span class="woocommerce-Price-amount amount"><bdi><?= number_format($product->price) ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
+                                            <span class="woocommerce-Price-amount amount" style=" color: #0f753d;"><bdi><?= number_format($product->price) ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
                                 <?php
                                         }
                                 ?>
