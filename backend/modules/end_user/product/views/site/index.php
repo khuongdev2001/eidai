@@ -66,6 +66,16 @@ Pjax::begin(['id' => 'content_ajax']);
                                         }
                                 ?>
                                 </a><a href="?add-to-cart=106" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="106" data-product_sku="" aria-label="Thêm &ldquo;Sàn gỗ kỹ thuật - Gỗ óc chó 1P (Bản rộng 90mm) (MRBS-WAL-C)&rdquo; vào giỏ hàng" rel="nofollow">Thêm vào giỏ hàng</a>
+                                        <span class="woocommerce-Price-amount amount " style=" color: #0f753d;"><bdi><?= number_format($product->price) ?><span
+                                                        class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </a><a href="?add-to-cart=106" data-quantity="1"
+                                       class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                       data-product_id="106" data-product_sku=""
+                                       aria-label="Thêm &ldquo;Sàn gỗ kỹ thuật - Gỗ óc chó 1P (Bản rộng 90mm) (MRBS-WAL-C)&rdquo; vào giỏ hàng"
+                                       rel="nofollow">Thêm vào giỏ hàng</a>
                             </li>
                         <?php
                             $index++;
