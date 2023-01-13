@@ -1940,79 +1940,31 @@ button.menu-toggle::after {
 /**
  * Pagination
  */
-.pagination,
-.woocommerce-pagination {
-    padding: 1em 0;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-width: 1px 0;
+ .wp-pagination{
     text-align: center;
-    clear: both;
+ }
+ .pagination {
+    display: inline-block;
 }
 
-.pagination ul.page-numbers::before,
-.pagination ul.page-numbers::after,
-.woocommerce-pagination ul.page-numbers::before,
-.woocommerce-pagination ul.page-numbers::after {
-    content: '';
-    display: table;
-}
-
-.pagination ul.page-numbers::after,
-.woocommerce-pagination ul.page-numbers::after {
-    clear: both;
-}
-
-.pagination .page-numbers,
-.woocommerce-pagination .page-numbers {
+.pagination li{
+    float: left;
     list-style: none;
-    margin: 0;
-    vertical-align: middle;
 }
 
-.pagination .page-numbers li,
-.woocommerce-pagination .page-numbers li {
-    display: inline-block;
+.pagination li a,.pagination li {
+    color: black;
+    padding: 8px 13px;
+    text-decoration: none;
 }
 
-.pagination .page-numbers li .page-numbers,
-.woocommerce-pagination .page-numbers li .page-numbers {
-    border-left-width: 0;
-    display: inline-block;
-    padding: 0.3342343017em 0.875em;
-    background-color: rgba(0, 0, 0, 0.025);
-    color: #43454b;
+.pagination li.active a {
+    background-color: #147a42;
+    color: white;
 }
 
-.pagination .page-numbers li .page-numbers.current,
-.woocommerce-pagination .page-numbers li .page-numbers.current {
-    background-color: #2c2d33;
-    border-color: #2c2d33;
-}
-
-.pagination .page-numbers li .page-numbers.dots,
-.woocommerce-pagination .page-numbers li .page-numbers.dots {
-    background-color: transparent;
-}
-
-.pagination .page-numbers li .page-numbers.prev,
-.pagination .page-numbers li .page-numbers.next,
-.woocommerce-pagination .page-numbers li .page-numbers.prev,
-.woocommerce-pagination .page-numbers li .page-numbers.next {
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-.pagination .page-numbers li a.page-numbers:hover,
-.woocommerce-pagination .page-numbers li a.page-numbers:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.rtl .pagination a.next,
-.rtl .pagination a.prev,
-.rtl .woocommerce-pagination a.next,
-.rtl .woocommerce-pagination a.prev {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
 }
 
 /**
@@ -3048,3 +3000,4 @@ ul.products .wc-block-grid__product .button,
     height: 243px !important;
     object-fit: cover;
 }
+

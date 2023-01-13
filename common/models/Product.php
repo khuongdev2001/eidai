@@ -67,7 +67,12 @@ class Product extends BaseProduct
 
     public function getProperties()
     {
+        return $this->hasOne(Property::className(), ["id" => "property_id"])->via("productProperties");
+    }
 
+    public function getProductProperties()
+    {
+        return $this->hasMany(ProductProperty::className(), ["product_id" => "id"]);
     }
 
     public function formName()

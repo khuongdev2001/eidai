@@ -13,6 +13,7 @@ use yii\console\Controller;
 use yii\db\Connection;
 use yii\db\Exception;
 use yii\db\Query;
+use yii\helpers\Inflector;
 use function GuzzleHttp\Promise\all;
 
 class SyncDatabaseController extends Controller
@@ -38,6 +39,10 @@ class SyncDatabaseController extends Controller
 
     public function actionRun()
     {
+        echo env("BACKEND_BASE_URL");
+        die;
+
+        $this->syncProductPropertySlug();
         echo "Syncing Slider" . PHP_EOL;
         $this->syncSlider();
         echo "Sync Done Slider" . PHP_EOL;
@@ -50,6 +55,16 @@ class SyncDatabaseController extends Controller
         echo "Syncing Product" . PHP_EOL;
         $this->syncProduct();
         echo "Sync Done Product" . PHP_EOL;
+    }
+
+    public function syncProductPropertySlug()
+    {
+        $productProperies = ProductProperty::find()->all();
+        foreach ($productProperies as $productPropery) {
+            $productPropery->property_slug = Inflector::slug($productPropery->property_value,"-",50);
+            $productPropery->save(false);
+        }
+        die("oke");
     }
 
     public function syncProductCategory()

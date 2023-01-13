@@ -17,6 +17,7 @@ use Yii;
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
+ * @property string $property_slug
  * @property string $aliasModel
  */
 abstract class ProductProperty extends \common\models\base\ActiveRecord
@@ -40,7 +41,7 @@ abstract class ProductProperty extends \common\models\base\ActiveRecord
         return [
             [['user_id', 'product_id', 'property_id'], 'integer'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['property_value'], 'string', 'max' => 500]
+            [['property_value', 'property_slug'], 'string', 'max' => 500]
         ];
     }
 
@@ -58,6 +59,7 @@ abstract class ProductProperty extends \common\models\base\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
+            'property_slug' => 'Property Slug',
         ];
     }
 
