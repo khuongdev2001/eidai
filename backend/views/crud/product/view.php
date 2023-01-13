@@ -122,6 +122,72 @@ $this->params['breadcrumbs'][] = 'View';
 
 
     
+<?php $this->beginBlock('ProductProperties'); ?>
+<div style='position: relative'>
+<div style='position:absolute; right: 0px; top: 0px;'>
+  <?php
+        echo Html::a(
+            '<span class="glyphicon glyphicon-list"></span> ' . 'List All' . ' Product Properties',
+            ['/crud/product-property/index'],
+            ['class'=>'btn text-muted btn-xs']
+        ) ?>
+  <?= Html::a(
+            '<span class="glyphicon glyphicon-plus"></span> ' . 'New' . ' Product Properties',
+             ['/crud/product-property/create', 'ProductProperty' => ['product_id' => $model->id]],
+            ['class'=>'btn btn-success btn-xs']
+        ); ?>
+</div>
+</div>
+<?php Pjax::begin(['id'=>'pjax-ProductProperties', 'enableReplaceState'=> false, 'linkSelector'=>'#pjax-ProductProperties ul.pagination a, th a']) ?>
+<?=
+ '<div class="table-responsive">'
+ . \yii\grid\GridView::widget([
+    'layout' => '{summary}<div class="text-center">{pager}</div>{items}<div class="text-center">{pager}</div>',
+    'dataProvider' => new \yii\data\ActiveDataProvider([
+        'query' => $model->getProductProperties(),
+        'pagination' => [
+            'pageSize' => 20,
+            'pageParam'=>'page-productproperties',
+        ]
+    ]),
+    'pager'        => [
+        'class'          => yii\widgets\LinkPager::className(),
+        'firstPageLabel' => 'First',
+        'lastPageLabel'  => 'Last'
+    ],
+    'columns' => [
+ [
+    'class'      => 'yii\grid\ActionColumn',
+    'template'   => '{view} {update}',
+    'contentOptions' => ['nowrap'=>'nowrap'],
+    'urlCreator' => function ($action, $model, $key, $index) {
+        // using the column name as key, not mapping to 'id' like the standard generator
+        $params = is_array($key) ? $key : [$model->primaryKey()[0] => (string) $key];
+        $params[0] = '/crud/product-property' . '/' . $action;
+        $params['ProductProperty'] = ['product_id' => $model->primaryKey()[0]];
+        return $params;
+    },
+    'buttons'    => [
+        
+    ],
+    'controller' => '/crud/product-property'
+],
+        'id',
+        'user_id',
+        'property_id',
+        'property_value',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'property_slug',
+]
+])
+ . '</div>' 
+?>
+<?php Pjax::end() ?>
+<?php $this->endBlock() ?>
+
+
     <?php 
         echo Tabs::widget(
                  [
@@ -132,6 +198,11 @@ $this->params['breadcrumbs'][] = 'View';
     'label'   => '<b class=""># '.Html::encode($model->id).'</b>',
     'content' => $this->blocks['common\models\Product'],
     'active'  => true,
+],
+[
+    'content' => $this->blocks['ProductProperties'],
+    'label'   => '<small>Product Properties <span class="badge badge-default">'. $model->getProductProperties()->count() . '</span></small>',
+    'active'  => false,
 ],
  ]
                  ]

@@ -60,6 +60,9 @@ use yii\helpers\StringHelper;
 
 <!-- attribute property_value -->
 			<?= $form->field($model, 'property_value')->textInput(['maxlength' => true]) ?>
+
+<!-- attribute property_slug -->
+			<?= $form->field($model, 'property_slug')->textInput(['maxlength' => true]) ?>
         </p>
         <?php $this->endBlock(); ?>
         

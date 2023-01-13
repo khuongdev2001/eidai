@@ -16,7 +16,7 @@ use yii\helpers\StringHelper;
 <div class="product-form">
 
     <?php $form = ActiveForm::begin([
-    'id' => 'Product',
+    'id' => '',
     'layout' => 'horizontal',
     'enableClientValidation' => true,
     'errorSummaryCssClass' => 'error-summary alert alert-danger',

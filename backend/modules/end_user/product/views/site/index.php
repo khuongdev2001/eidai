@@ -102,17 +102,18 @@ Pjax::begin(['id' => 'content_ajax']);
                 <div id="woocommerce_price_filter-3" class="widget woocommerce widget_price_filter"><span
                             class="gamma widget-title">Lọc theo giá tiền</span>
                     <form method="get"
-                          action="https://eidai.com.vn/product-category/tat-ca-san-pham/san-go-tu-nhien-ky-thuat/">
+                          action="<?= Yii::$app->request->getUrl() ?>">
                         <div class="price_slider_wrapper">
                             <div class="price_slider" style="display:none;"></div>
                             <div class="price_slider_amount" data-step="10">
                                 <label class="screen-reader-text" for="min_price">Giá thấp nhất</label>
-                                <input type="text" id="min_price" name="min_price" value="2450000" data-min="2450000"
+                                <input type="text" id="min_price" name="min_price"
+                                       value="<?= Yii::$app->request->get("min_price", 2450000) ?>" data-min="<?= Yii::$app->request->get("min_price", 2450000) ?>"
                                        placeholder="Giá thấp nhất"/>
                                 <label class="screen-reader-text" for="max_price">Giá cao nhất</label>
-                                <input type="text" id="max_price" name="max_price" value="3050000" data-max="3050000"
+                                <input type="text" id="max_price" name="max_price" value="<?= Yii::$app->request->get("max_price", 5050000) ?>" data-max="<?= Yii::$app->request->get("max_price", 5050000) ?>"
                                        placeholder="Giá cao nhất"/>
-                                <button type="submit" class="button">Lọc</button>
+                                <button type="submit" class="button btn-filter">Lọc</button>
                                 <div class="price_label" style="display:none;">
                                     Giá <span class="from"></span> &mdash; <span class="to"></span>
                                 </div>
@@ -131,7 +132,17 @@ Pjax::begin(['id' => 'content_ajax']);
                             <?php
                             foreach ($property->propertyChilds as $propertyChild) {
                                 ?>
-                                <li attr-filter-key="<?=$property->property_slug?>" attr-filter-value="<?=$propertyChild->id ?>" class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term"><a
+                                <li attr-filter-key="filter_<?= $property->property_slug ?>"
+                                    attr-filter-value="<?= $propertyChild->property_slug ?>"
+                                    class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term
+                                                <?php
+                                    if (Yii::$app->request->get("filter_" . $property->property_slug)) {
+                                        if (in_array($propertyChild->property_slug, explode(",", Yii::$app->request->get("filter_" . $property->property_slug)))) {
+                                            echo "chosen";
+                                        }
+                                    }
+                                    ?>
+                                            "><a
                                             rel="nofollow"
                                             href="https://eidai.com.vn/product-category/tat-ca-san-pham/san-go-tu-nhien-ky-thuat/?filter_kieu-lat=lat-thang&#038;query_type_kieu-lat=or">
                                         <?= $propertyChild->property_value ?>
@@ -158,20 +169,54 @@ Pjax::begin(['id' => 'content_ajax']);
 <?php
 $script = <<< JS
     $(document).ready(function() {
-         $(".woocommerce-product-search").submit(function (event){
+        const urlParams = new URLSearchParams(location.search);
+        let filters = Object.fromEntries(urlParams);
+        for (const key in filters){
+               if(key.includes("filter")){
+                   filters[key]=filters[key].split(","); 
+               }
+            }
+        $(".woocommerce-widget-layered-nav-list__item").click(function (e){
+            if(Array.isArray(filters[$(this)[0].getAttribute("attr-filter-key")])){
+                if(!filters[$(this)[0].getAttribute("attr-filter-key")].includes($(this)[0].getAttribute("attr-filter-value"))){
+                    filters[$(this)[0].getAttribute("attr-filter-key")].push($(this)[0].getAttribute("attr-filter-value"));
+                }
+                else{
+                    const check =$(this)[0].getAttribute("attr-filter-value");
+                }
+            }
+            else if(filters[$(this)[0].getAttribute("attr-filter-key")] == "undefined"){
+                filters[$(this)[0].getAttribute("attr-filter-key")]=[$(this)[0].getAttribute("attr-filter-value")];
+            }
+            else {
+                filters[$(this)[0].getAttribute("attr-filter-key")]=[filters[$(this)[0].getAttribute("attr-filter-key")],$(this)[0].getAttribute("attr-filter-value")]
+            }
+            fetch(filters);
+            e.preventDefault();
+        })  
+        
+        $(".btn-filter").click(function (e){
+            filters["min_price"] = $(this).parent(".price_slider_amount").find("#min_price").val();
+            filters["max_price"] = $(this).parent(".price_slider_amount").find("#max_price").val();
+            fetch(filters);
+            e.preventDefault();
+        })
+    });
+
+    function fetch (filters) {
+        filterClones = {...filters};
+        for (const filter in filterClones){
+                if(Array.isArray(filterClones[filter])){
+                    filterClones[filter]=filterClones[filter].join(",");
+                }
+            }
+            const params = new URLSearchParams(filterClones).toString();
             event.preventDefault()
                 $.pjax({
-                url: "http://localhost:8080/end-user/product/site/index?s=dev",
+                url: "http://localhost:8080/end-user/product/site/index?"+params,
                 container: '#content_ajax',
             });
-        });
-        const filters = [];
-        $(".woocommerce-widget-layered-nav-list__item").click((e)=>{
-            console.log($(this));
-            // console.log(e.currentTarget.parentElement.classList.toggle("chosen"));
-            e.preventDefault();
-        }) 
-    });
+    }
 JS;
 $this->registerJs($script);
 Pjax::end();

@@ -86,6 +86,7 @@ $this->params['breadcrumbs'][] = 'View';
         'updated_at',
         'deleted_at',
         'property_value',
+        'property_slug',
     ],
     ]);
   ?>

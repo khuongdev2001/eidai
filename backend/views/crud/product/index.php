@@ -44,7 +44,7 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 
         <div class="pull-right">
 
-                                                    
+                                                                                                            
             <?= 
             \yii\bootstrap\ButtonDropdown::widget(
             [
@@ -60,6 +60,14 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
             [
                 'url' => ['/crud/product-category/index'],
                 'label' => '<i class="glyphicon glyphicon-arrow-left"></i> ' . Yii::t('models', 'Product Category'),
+            ],
+                                [
+                'url' => ['/crud/property/index'],
+                'label' => '<i class="glyphicon glyphicon-arrow-left"></i> ' . Yii::t('models', 'Property'),
+            ],
+                                [
+                'url' => ['/crud/product-property/index'],
+                'label' => '<i class="glyphicon glyphicon-arrow-right"></i> ' . Yii::t('models', 'Product Property'),
             ],
                     
 ]

@@ -41,7 +41,7 @@ class SiteController extends Controller
         $category = ProductCategory::find()->where(["id" => Yii::$app->request->get("category_id", 29)])->one();
         $properties = Property::find()->with("propertyChilds")->all();
         if (Yii::$app->request->isAjax) {
-            return $this->renderAjax("index.php", [
+            return $this->renderAjax("_index.php", [
                 'searchModel' => $searchModel,
                 'category' => $category,
                 'dataProvider' => $dataProvider,
