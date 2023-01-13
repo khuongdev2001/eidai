@@ -35,6 +35,7 @@ class BackendAsset extends AssetBundle
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,700,900&subset=latin%2Clatin-ext',
             'https://fonts.googleapis.com/css?family=Bai+Jamjuree%3A200%2C300%2C400%2C500%2C600%2C700%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i&display=swap&subset=all&ver=3.2.0',
             'css/themes/inlines/global-inline-css.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css',
             'css/style.css?t=' . time(),
             'css/pagenavi-css.css',
             'css/dashicons.min.css',
