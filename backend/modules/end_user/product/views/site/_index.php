@@ -171,7 +171,11 @@ $script = <<< JS
                     filters[$(this)[0].getAttribute("attr-filter-key")].push($(this)[0].getAttribute("attr-filter-value"));
                 }
                 else{
-                    const check =$(this)[0].getAttribute("attr-filter-value");
+                    const filterValue =$(this)[0].getAttribute("attr-filter-value");
+                    const dataFilterSame = filters[$(this)[0].getAttribute("attr-filter-key")].filter(function (item){
+                        return item != filterValue;
+                    });
+                    filters[$(this)[0].getAttribute("attr-filter-key")]=dataFilterSame;
                 }
             }
             else if(filters[$(this)[0].getAttribute("attr-filter-key")] == "undefined"){
@@ -206,7 +210,6 @@ $script = <<< JS
                 container: '#content_ajax',
             });
     }
-
 JS;
 $this->registerJs($script);
 ?>

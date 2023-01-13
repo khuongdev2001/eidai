@@ -60,7 +60,7 @@ class ProductSearch extends Product
             ]
         ]);
         foreach ($params as $key => $param) {
-            if (str_contains($key, "filter")) {
+            if (str_contains($key, "filter") && !empty($param)) {
                 $query->orWhere(["and",
                     ["properties.property_slug" => str_replace(["filter_"], "", $key)],
                     ["product_properties.property_slug" => explode(",", $param)]
