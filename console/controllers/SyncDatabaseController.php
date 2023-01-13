@@ -39,6 +39,9 @@ class SyncDatabaseController extends Controller
 
     public function actionRun()
     {
+        echo env("BACKEND_BASE_URL");
+        die;
+
         $this->syncProductPropertySlug();
         echo "Syncing Slider" . PHP_EOL;
         $this->syncSlider();

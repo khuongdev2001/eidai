@@ -77,6 +77,11 @@ use backend\modules\end_user\product\assets\ProductIndexAsset;
                         }
                         ?>
                     </ul>
+                    <div class="wp-pagination">
+                        <?php echo \yii\widgets\LinkPager::widget([
+                            'pagination' => $dataProvider->pagination,
+                        ]); ?>
+                    </div>
                 </main><!-- #main -->
             </div><!-- #primary -->
             <div id="secondary" class="widget-area" role="complementary">
@@ -197,10 +202,11 @@ $script = <<< JS
             const params = new URLSearchParams(filterClones).toString();
             event.preventDefault()
                 $.pjax({
-                url: "http://localhost:8080/end-user/product/site/index?"+params,
+                url: "http://localhost:5000/end-user/product/site/index?"+params,
                 container: '#content_ajax',
             });
     }
+
 JS;
 $this->registerJs($script);
 ?>
