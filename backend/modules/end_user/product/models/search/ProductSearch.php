@@ -51,7 +51,8 @@ class ProductSearch extends Product
         $query = Product::find()
             ->joinWith("category")
             ->joinWith("properties")
-            ->groupBy("products.id");
+            ->groupBy("products.id")
+            ->orderBy(['created_at' => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
