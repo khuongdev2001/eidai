@@ -8,9 +8,9 @@ use yii\helpers\Url;
     <div class="header-social" style="max-width: 1080px; margin-left: auto; margin-right: auto; margin-bottom: 0px; margin-top:15px;">
         <div class="header_soci" style="float:right; padding-right:0px;">
             <a href="https://www.facebook.com/sangonhatban/">
-                <img src="http://eidai.com.vn/wp-content/uploads/2020/05/icons8-facebook-100.png" width="20px" padding-bottom="-20px"> Facebook </a>
+                <img src="/img/icons8-facebook-100.png" width="20px" padding-bottom="-20px"> Facebook </a>
             <a href="https://www.youtube.com/channel/UCO6W7tJ1OP27-e99Yl4EDvg/">
-                <img src="http://eidai.com.vn/wp-content/uploads/2020/05/icons8-youtube-64.png" width="20px" margin-bottom="-20px"> Youtube </a>
+                <img src="/img/icons8-youtube-64.png" width="20px" margin-bottom="-20px"> Youtube </a>
         </div>
         <div class="storefront-primary-navigation">
             <div class="col-full">
@@ -22,7 +22,7 @@ use yii\helpers\Url;
                         <ul id="menu-menu-chinh" class="menu">
                             <li id="menu-item-204" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-204">
                                 <a href="<?= Yii::$app->urlManagerBackend->hostInfo ?>" aria-current="page" class="menu-image-title-after menu-image-not-hovered">
-                                    <img width="200" height="54" src="https://eidai.com.vn/wp-content/uploads/2020/06/Untitled-1-1.png" class="menu-image menu-image-title-after" alt="" loading="lazy" />
+                                    <img width="200" height="54" src="/img/Untitled-1-1.png" class="menu-image menu-image-title-after" alt="" loading="lazy" />
                                     <span class="menu-image-title-after menu-image-title">
                                         <img src="">
                                     </span>
@@ -53,7 +53,7 @@ use yii\helpers\Url;
                                 ?>
                             </li>
                             <li id="menu-item-88" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-88">
-                                <a href="https://eidai.com.vn/product-category/du-an-tieu-bieu/">DỰ ÁN TIÊU BIỂU</a>
+                                <a href="<?= Yii::$app->urlManagerBackend->hostInfo . "/end-user/product/site?category_id=19"?>">DỰ ÁN TIÊU BIỂU</a>
                             </li>
                             <li id="menu-item-423" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-423">
                                 <a href="/end-user/page/site/view?page_slug=danh-sach-showroom-dai-ly">DANH SÁCH
@@ -81,7 +81,7 @@ use yii\helpers\Url;
                         <ul id="menu-menu-dien-thoai" class="menu">
                             <li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-243">
                                 <a class="menu-image-title-after menu-image-not-hovered">
-                                    <img width="36" height="36" src="https://eidai.com.vn/wp-content/uploads/2020/05/icons8-menu-480-36x36.png" class="menu-image menu-image-title-after" alt="" loading="lazy" />
+                                    <img width="36" height="36" src="/img/icons8-menu-480-36x36.png" class="menu-image menu-image-title-after" alt="" loading="lazy" />
                                     <span class="menu-image-title-after menu-image-title">
                                         <b></b>
                                     </span>

@@ -7,7 +7,7 @@
                     <div class="textwidget">
                         <p>
                             <img loading="lazy" class="alignnone wp-image-124"
-                                 src="http://eidai.com.vn/wp-content/uploads/2020/05/logo.png" alt="" width="135"
+                                 src="/img/logo.png" alt="" width="135"
                                  height="43"/>
                             <br/>
                             <a href="https://www.eidai.com">EIDAI Nhật Bản</a>
@@ -60,27 +60,27 @@
                     <div class="textwidget">
                         <p>
                             <img loading="lazy" class="alignnone wp-image-118"
-                                 src="http://eidai.com.vn/wp-content/uploads/2020/05/icons8-instagram-100.png" alt=""
+                                 src="/img/icons8-instagram-100.png" alt=""
                                  width="64" height="64"/>
                             <a href="https://www.facebook.com/sangonhatban/">
                                 <img loading="lazy" class="alignnone wp-image-119"
-                                     src="http://eidai.com.vn/wp-content/uploads/2020/05/icons8-facebook-100.png" alt=""
+                                     src="/img/icons8-facebook-100.png" alt=""
                                      width="65" height="65"/>
                             </a>
                             <img loading="lazy" class="alignnone wp-image-120"
-                                 src="http://eidai.com.vn/wp-content/uploads/2020/05/icons8-twitter-100.png" alt=""
+                                 src="/img/icons8-twitter-100.png" alt=""
                                  width="66" height="66"/>
                             <a href="https://www.youtube.com/channel/UCO6W7tJ1OP27-e99Yl4EDvg/">
                                 <img loading="lazy" class="alignnone wp-image-130 size-full"
-                                     src="http://eidai.com.vn/wp-content/uploads/2020/05/icons8-youtube-64.png" alt=""
+                                     src="/img/icons8-youtube-64.png" alt=""
                                      width="64" height="64"/>
                             </a>
                         </p>
                         <p>
                             <img loading="lazy" class="wp-image-127 alignleft"
-                                 src="http://eidai.com.vn/wp-content/uploads/2020/05/an_tin_nhan_Zalo_1-300x118.jpg"
+                                 src="/img/an_tin_nhan_Zalo_1-300x118.jpg"
                                  alt="" width="74" height="29"
-                                 srcset="https://eidai.com.vn/wp-content/uploads/2020/05/an_tin_nhan_Zalo_1-300x118.jpg 300w, https://eidai.com.vn/wp-content/uploads/2020/05/an_tin_nhan_Zalo_1-500x196.jpg 500w, https://eidai.com.vn/wp-content/uploads/2020/05/an_tin_nhan_Zalo_1-1024x401.jpg 1024w, https://eidai.com.vn/wp-content/uploads/2020/05/an_tin_nhan_Zalo_1-768x301.jpg 768w, https://eidai.com.vn/wp-content/uploads/2020/05/an_tin_nhan_Zalo_1.jpg 1440w"
+                                 srcset="/img/an_tin_nhan_Zalo_1-300x118.jpg 300w, /img/an_tin_nhan_Zalo_1-500x196.jpg 500w, /img/an_tin_nhan_Zalo_1-1024x401.jpg 1024w, /img/an_tin_nhan_Zalo_1-768x301.jpg 768w, /img/an_tin_nhan_Zalo_1.jpg 1440w"
                                  sizes="(max-width: 74px) 100vw, 74px"/>TP.HCM: 0986 348 372
                         </p>
                         <p>TP.HN: 0963910684</p>
@@ -91,9 +91,6 @@
         </div>
         <!-- .footer-widgets.row-1 -->
         <div class="site-info"> &copy; SÀN GỖ CAO CẤP NHẬT BẢN 2022 <br/>
-            <a href="https://woocommerce.com" target="_blank"
-               title="WooCommerce - Nền tảng thương mại điện tử tốt nhất cho WordPress" rel="noreferrer">Tạo bởi
-                Storefront &amp; WooCommerce</a>.
         </div>
         <!-- .site-info -->
         <div class="storefront-handheld-footer-bar">
