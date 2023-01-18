@@ -59,6 +59,15 @@
         transform: translate3d(0, -100%, 0);
     }
 }
+#myList {
+    background-color: #eeeeee;
+    font-size: 11pt;
+    border: none;
+    padding: 5px;
+    color: #0f753d;
+    font-weight: 600;
+    cursor: pointer;
+}
 
 .price ins {
     font-weight: 400;

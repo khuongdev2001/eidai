@@ -108,6 +108,16 @@ Pjax::begin(['id' => 'content_ajax']);
             </div><!-- #primary -->
             <div id="secondary" class="widget-area" role="complementary">
                 <div id="woocommerce_price_filter-3" class="widget woocommerce widget_price_filter"><span
+                            class="gamma widget-title">Sắp xếp theo</span>
+                    <form>
+                        <select id = "myList" onchange = "favTutorial()" >
+                            <option> Tùy chọn </option>
+                            <option> Giá tiền tăng dần </option>
+                            <option> Giá tiền giảm dần </option>
+                        </select>
+                    </form>
+                </div>
+                <div id="woocommerce_price_filter-3" class="widget woocommerce widget_price_filter"><span
                         class="gamma widget-title">Lọc theo giá tiền</span>
                     <form method="get" action="<?= Yii::$app->request->getUrl() ?>">
                         <div class="price_slider_wrapper">
@@ -213,6 +223,10 @@ $script = <<<JS
             fetch(filters);
             e.preventDefault();
         })
+        
+        $("#myList").click(function (){
+            favTutorial();
+        })
     });
 
     function fetch (filters) {
@@ -232,6 +246,10 @@ $script = <<<JS
        $('#content_ajax').on('pjax:end',function() {
             $("html, body").animate({scrollTop: 0}, 200);
        });
+    function favTutorial() {
+        var mylist = document.getElementById("myList");
+        document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
+}
 JS;
 $this->registerJs($script);
 Pjax::end();
