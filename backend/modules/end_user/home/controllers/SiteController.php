@@ -15,6 +15,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $this->view->title = "Trang Chủ";
         $sliders = Slider::find()->limit(10)->active()->all();
         return $this->render("index", compact("sliders"));
     }
