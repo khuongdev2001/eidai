@@ -36,6 +36,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->title = "Danh sách bài viết";
         $searchModel = new PostSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $postCategory = PostCategory::find()->where(["id" => $searchModel->category_id])->one();
@@ -58,6 +59,7 @@ class SiteController extends Controller
         if (!$post) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+        $this->view->title = $post->post_title;
         return $this->render('view', [
             'post' => $post,
         ]);

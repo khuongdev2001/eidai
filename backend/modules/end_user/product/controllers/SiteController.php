@@ -36,6 +36,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->title = "Danh Sách Sản Phẩm";
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $category = ProductCategory::find()->where(["id" => Yii::$app->request->get("category_id", 29)])->one();
@@ -69,6 +70,7 @@ class SiteController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         $properties = Property::find()->all();
+        $this->view->title = $product->product_title;
         return $this->render('view', [
             'product' => $product,
             "properties" => $properties
