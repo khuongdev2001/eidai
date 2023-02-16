@@ -1,0 +1,6 @@
+-Step Basic:
+ Step1: npm install(install clever)
+ Step2: show log clever logs
+-Step Advanced:
+  Step1: clever create "new app"
+  Step2: clever link "app"
