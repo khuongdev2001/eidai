@@ -2,6 +2,7 @@
 
 use common\models\ProductCategory;
 use yii\helpers\Url;
+
 ?>
     <header id="masthead" class="site-header" role="banner" style="">
         <div class="header-social"
@@ -150,12 +151,22 @@ use yii\helpers\Url;
         <div class="col-full">
             <div id="woocommerce_product_search-2" class="widget woocommerce widget_product_search">
                 <form role="search" method="get" class="woocommerce-product-search"
-                      action="/end-user/product/site/index">
+                      action="<?= Url::to(array_merge(["/end-user/product/site/index"])) ?>">
                     <label class="screen-reader-text" for="woocommerce-product-search-field-1">Tìm kiếm:</label>
                     <input type="search" id="woocommerce-product-search-field-1" class="search-field"
                            placeholder="Tìm sản phẩm&hellip;" value="<?= Yii::$app->request->get("s") ?>" name="s"/>
                     <button type="submit" value="Tìm kiếm">Tìm kiếm</button>
                     <input type="hidden" name="post_type" value="product"/>
+                    <?php
+                    foreach (Yii::$app->request->get() as $param => $value) {
+                        if (in_array($param, ["s", "post_type"])) {
+                            continue;
+                        }
+                        ?>
+                        <input type="hidden" name="<?= $param ?>" value="<?= $value ?>"/>
+                        <?php
+                    }
+                    ?>
                 </form>
             </div>
         </div>

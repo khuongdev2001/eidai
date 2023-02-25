@@ -194,6 +194,11 @@ $script = <<< JS
             fetch(filters);
             e.preventDefault();
         })
+        
+        $("#myList").change(function (e){
+            filters["sort"] = e.target.value;
+            fetch(filters);
+        })
     });
 
     function fetch (filters) {
@@ -210,6 +215,7 @@ $script = <<< JS
                 container: '#content_ajax',
             });
     }
+    
 JS;
 $this->registerJs($script);
 ?>
