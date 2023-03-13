@@ -1,4 +1,7 @@
 <?php
+
+use backend\modules\api\Module;
+
 $config = [
     'homeUrl' => Yii::getAlias('@backendUrl'),
     'controllerNamespace' => 'backend\controllers',
@@ -29,7 +32,10 @@ $config = [
         ],
         'end-user' => [
             'class' => backend\modules\end_user\Module::className()
-        ]
+        ],
+        'api' => [
+            'class' => Module::className()
+        ],
     ],
 ];
 
