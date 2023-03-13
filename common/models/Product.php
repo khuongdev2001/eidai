@@ -12,6 +12,9 @@ use yii\helpers\ArrayHelper;
  */
 class Product extends BaseProduct
 {
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 2;
+    const STATUS_DELETED = 99;
 
     public function behaviors()
     {
