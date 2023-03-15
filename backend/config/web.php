@@ -1,6 +1,7 @@
 <?php
 
 use backend\modules\api\Module;
+use yii\web\User;
 
 $config = [
     'homeUrl' => Yii::getAlias('@backendUrl'),
@@ -9,7 +10,7 @@ $config = [
         '@app' => __DIR__ . '/../',
         '@basePath' => __DIR__,
         '@bower' => "@vendor/bower-asset",
-        "@web_asset" => __DIR__.'/../web/assets',
+        "@web_asset" => __DIR__ . '/../web/assets',
     ],
     'defaultRoute' => 'end-user/home/site',
     'components' => [
@@ -21,10 +22,12 @@ $config = [
             'baseUrl' => env('BACKEND_BASE_URL'),
         ],
         'assetManager' => [
-            'bundles' => [
-            ]
+            'bundles' => []
+        ],
+        'user' => [
+            'class' => User::class,
+            'identityClass' => common\models\UserIdentity::class,
         ]
-
     ],
     'modules' => [
         'gridview' => [

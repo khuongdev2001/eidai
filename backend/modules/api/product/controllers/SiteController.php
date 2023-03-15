@@ -10,6 +10,7 @@ use yii\rest\Controller;
 class SiteController extends Controller
 {
     public function actionList(){
+        return 1;
     }
 
     public function actionDetail() {
